@@ -50,11 +50,15 @@
       />
     </div>
     <!-- <div class="topnav">
-      <a href="javascript:void(0);" class="icon" onclick="myNav()">
-        <i class="fa fa-bars"></i>
+      <a href="" class="" onclick="myNav()">
       </a>
     </div> -->
     <nav>
+      <img
+        src="images/logo/catranlogo.png"
+        alt="Ca Tran logo"
+        style="width: 100px"
+      />
       <ul id="myLinks">
         <li><a href="#bio">Bio</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -82,37 +86,74 @@
     <main class="outer-grid">
       <div class="inner-grid">
         <section id="bio" class="col column-1">
-          <h1>Ca Tran</h1>
+          <h1 class="mobile-opacity-hidden">Ca Tran</h1>
           <div class="hr-line desktop-hidden mobile-hidden"></div>
           <h2 id="bio-intro">
             Independent<br />
-            Art Director,<br />
+            Art Director &<br />
             Digital Designer,<br />
             based in Vietnam.
           </h2>
-          <div class="separator"></div>
-          <p id="hello-1">Xin Chào!</p>
+          <br />
+          <marquee
+            id="hello-1"
+            direction="right"
+            onmouseover="stop()"
+            onmouseout="start()"
+          >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Hola
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Buongiorno
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Bonjour
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            您好
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            안녕하세요
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            こんにちは
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Hello
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Xin Chào
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Hola
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Buongiorno
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Bonjour
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            您好
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            안녕하세요
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            こんにちは
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Hello
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Xin Chào
+          </marquee>
+          <br />
+          <br />
           <!-- <p id="hello-2">Hello!</p>
           <p id="hello-3">Ciao!</p>
           <p id="hello-4">Bonjour!</p>
           <p id="hello-5">Konnichiwa!</p>
           <p id="hello-6">Anyong!</p> -->
-          <div class="separator"></div>
           <p>
-            My name is Ca Tran, I am a full and an authentic Vietnamese, I
-            create brand identities, digital design, graphic design, web design
-            & motion graphics.
+            My name is Ca Tran, I create brand identities, digital & graphic
+            design, web design & motion.
           </p>
           <div class="separator"></div>
           <p>
-            With over 6 years of creative experience in multiple sectors,
-            starting from Education, NGOs, Advertising, Healthcare, Fintech to
-            F&B and Nightlife. During the time, I've had opportunities to work
-            with different brands from inside Vietnam and from overseas.
+            Over 6 years of creative experience in multiple sectors, from
+            Education, NGOs, Advertising, Healthcare, Fintech to F&B and
+            Nightlife, including brands from Vietnam and overseas.
           </p>
           <div class="separator"></div>
           <p>
-            I am currently working as an independent Art Director and Digital
+            Currently working as an independent Art Director and Digital
             Designer, based in Saigon (HCMC), Vietnam.
           </p>
 
@@ -463,20 +504,18 @@
           <h3>Work together!</h3>
           <p>
             I am currently
-            <span class="marquee"
-              ><span class="available"
-                ><a
-                  class="no-arrow-link"
-                  href="mailto:hello@ca-tran.com?subject=Let's work together!"
-                  >available</a
-                ></span
+            <span class="available"
+              ><a
+                class="no-arrow-link"
+                href="mailto:hello@ca-tran.com?subject=Let's work together!"
+                >available</a
               >
             </span>
             for new ideas, projects and collabs. If you're interested in working
             together, please send me an
             <a
               class="no-arrow-link"
-              href="hello@ca-tran.com?subject=Hey, I have an idea!"
+              href="mailto:hello@ca-tran.com?subject=Hey, I have an idea!"
               >email</a
             >, I will get back to you shortly.
           </p>
@@ -519,12 +558,13 @@
     <footer>
       <div class="hr-line desktop-hidden"></div>
       <p>Ca Tran &copy 2023</p>
-      <!-- <p class="footer-toggle">
-        <a class="no-arrow-link dark-mode-button" onclick="darkMode()">Night</a
+      <p class="footer-toggle">
+        <a class="no-arrow-link dark-mode-button" onclick="darkMode()"
+          >Dark Mode</a
         ><a class="no-arrow-link light-mode-button" onclick="lightMode()"
-          >Day</a
+          >Light Mode</a
         >
-      </p> -->
+      </p>
       <p class="footer-time">Saigon — <span id="time"></span>.</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
