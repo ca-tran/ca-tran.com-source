@@ -68,14 +68,11 @@ body {
 }
 
 .bg-img {
-    background-image: url(images/svg/svg-bg.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-image: none;
 }
 
 header {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 footer {
@@ -235,6 +232,7 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
+    margin-bottom: 8px;
 }
 
 h3 {
@@ -327,12 +325,18 @@ nav li a:hover::after {
     min-height: 100vh;
 } */
 
+/*Mobile Bio Logo*/
+.bio-logo {
+    height: 1.6rem;
+    margin-bottom: -35px;
+}
+
 /*Mobile Hidden*/
 .mobile-hidden {
     display: none;
 }
 
-.mobile-opacity-hidden {
+.opacity-hidden {
     opacity: 0;
 }
 
@@ -527,12 +531,12 @@ TABLET - SMALL DESKTOP
         margin-right: 60px;
     }
 
-    /* .bg-img {
+    .bg-img {
         background-image: url(images/svg/svg-bg.svg);
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
-    } */
+    }
 
     .inner-grid {
         display: grid;
@@ -555,6 +559,7 @@ TABLET - SMALL DESKTOP
     
     h2 {
         font-size: 1.2rem;
+        margin-bottom: 0;
     }
     
     /*Tablet Footer*/
@@ -585,7 +590,7 @@ TABLET - SMALL DESKTOP
     .mobile-hidden {
         display: grid;
     }
-    .mobile-opacity-hidden {
+    .opacity-hidden {
         opacity: 100;
     }
 
@@ -607,6 +612,10 @@ WIDE DESKTOP
         text-decoration: none;
     }
 
+    h2 {
+        margin-bottom: 0;
+    }
+    
     .bg-img {
         background-image: url(images/svg/svg-bg.svg);
         background-repeat: no-repeat;
@@ -642,18 +651,23 @@ WIDE DESKTOP
     }
 
     .footer-time {
-        grid-column-start: 5;
-        grid-column-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 3;
     }
 
     footer .hr-line {
         grid-column-start: 1;
         grid-column-end: 6;
     }
-
-    .mobile-opacity-hidden {
-        opacity: 100;
+    .opacity-hidden {
+        opacity: 100%;
     }
+    /* .bio-logo {
+        display: block;
+        width: auto;
+        height: 20px;
+        margin-bottom: -21px;
+    } */
 }
 
 /*
