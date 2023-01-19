@@ -527,9 +527,12 @@ TABLET - SMALL DESKTOP
         margin-right: 60px;
     }
 
-    .bg-img {
+    /* .bg-img {
+        background-image: url(images/svg/svg-bg.svg);
+        background-repeat: no-repeat;
         background-size: cover;
-    }
+        background-attachment: fixed;
+    } */
 
     .inner-grid {
         display: grid;
@@ -605,7 +608,10 @@ WIDE DESKTOP
     }
 
     .bg-img {
+        background-image: url(images/svg/svg-bg.svg);
+        background-repeat: no-repeat;
         background-size: cover;
+        background-attachment: fixed;
     }
 
     body {
