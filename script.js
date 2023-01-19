@@ -41,12 +41,16 @@ function lightMode() {
 //     i = ++i % greets.length;
 // };
 
-//BurgerNav
-// function myNav() {
-//   var x = document.getElementById("myLinks");
-//   if (x.style.display === "block") {
-//     x.style.display = "none";
-//   } else {
-//     x.style.display = "block";
-//   }
-// }
+//MOBILE NAV & BURGER
+// const navBurger = document.querySelector(".nav-burger");
+// const navMenu = document.querySelector(".nav-menu");
+
+// navBurger.addEventListener("click", () => {
+//   navBurger.classList.toggle("active");
+//   navMenu.classList.toggle("active");
+// })
+
+// document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+//   navBurger.classList.remove("active");
+//   navMenu.classList.remove("active");
+// }))
