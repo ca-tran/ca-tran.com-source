@@ -117,8 +117,6 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Buongiorno
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Bonjour
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             您好
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             안녕하세요
@@ -133,13 +131,13 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Buongiorno
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Bonjour
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             您好
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             안녕하세요
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             こんにちは
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Bonjour
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Hello
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -149,13 +147,13 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Buongiorno
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Bonjour
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             您好
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             안녕하세요
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             こんにちは
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Bonjour
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Hello
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -165,21 +163,37 @@
           <br />
           <p>
             I'm Ca Tran, a Vietnamese designer & artist whose expertise varies
-            from digital design to art direction, graphic design & motion
-            graphics.
+            from digital design to art direction
+            <span
+              ><a
+                class="no-arrow-link"
+                id="bio-expertise"
+                onclick="displayExpertise()"
+                >and more.</a
+              ></span
+            >
           </p>
           <div class="separator"></div>
           <p>
-            With over 6 years of creative experience in multiple sectors, from
-            Education, NGOs, Advertising, Healthcare, Fintech to F&B and
-            Nightlife, including brands from Vietnam and overseas.
+            With over 6 years of creative experience in
+            <a
+              id="multiple-sectors"
+              class="no-arrow-link"
+              onclick="displaySectors()"
+              >multiple sectors</a
+            >,
+            <span id="bio-sectors"></span>
+            including brands from Vietnam and overseas.
           </p>
           <div class="separator"></div>
           <p>
             I'm currently living & working as an independent Art Director and
             Digital Designer in
-            <a href="geo:10.762622,106.660172" class="no-arrow-link"
-              >Saigon (HCMC)</a
+            <a
+              href="https://www.google.com/maps/place/Ho+Chi+Minh+City"
+              target="_blank"
+              class="no-arrow-link"
+              >Saigon</a
             >, Vietnam.
           </p>
           <div class="separator"></div>
@@ -192,7 +206,6 @@
             >
           </p>
         </section>
-
         <section id="experience" class="col column-2">
           <div class="hr-line desktop-hidden"></div>
           <h2>Experience</h2>
@@ -218,7 +231,7 @@
             <li>Photography</li>
             <li>Visual Art</li>
           </ul>
-          <p>—</p>
+          <div class="separator"></div>
           <h3>Design Services</h3>
           <ul>
             <li>Digital Design</li>
@@ -228,6 +241,12 @@
             <li>Motion Design</li>
           </ul>
           <div class="separator"></div>
+          <h3>Current Sectors</h3>
+          <ul>
+            <li>Art & Culture</li>
+            <li>F&B & Hospitality</li>
+          </ul>
+          <div class="separator"></div>
           <h3>Recognition</h3>
           <a
             href="https://campaignbriefasia.com/2021/11/04/dentsu-redder-named-vietnams-creative-agency-of-the-year-following-the-release-of-campaign-brief-asias-2021-creative-rankings/"
@@ -235,7 +254,6 @@
             >2021 Campaign Brief Asia</a
           >
         </section>
-
         <section id="career" class="col column-3">
           <div class="hr-line desktop-hidden"></div>
           <h2>Career</h2>
@@ -432,14 +450,6 @@
                 >Melbourne Zoo</a
               >
             </li>
-            <li>
-              <a
-                href="https://creditorwatch.com.au/credit/profile/16617685631/DMT-CONVEYANCING-PTY-LTD"
-                rel="nofollow"
-                target="_blank"
-                >DMT Conveyancing</a
-              >
-            </li>
           </ul>
           <div class="separator"></div>
           <h3>United States</h3>
@@ -473,7 +483,6 @@
             </li>
           </ul>
         </section>
-
         <section id="contact" class="col column-5">
           <div class="hr-line desktop-hidden"></div>
           <h2>Contact</h2>
@@ -546,9 +555,27 @@
         >
       </p> -->
       <p class="footer-time">
-        <a href="geo:10.762622,106.660172" class="no-arrow-link">Saigon</a> —
+        <a
+          href="https://www.google.com/maps/place/Ho+Chi+Minh+City"
+          class="no-arrow-link"
+          >Saigon</a
+        >
+        —
         <span id="time"></span>
       </p>
+      <!-- Current Weather -->
+      <!-- <div id="current" class="wrapper">
+        <p>
+          <span class="location"></span>
+          <span class="temp"></span>
+          <span class="conditions"></span>
+        </p>
+      </div> -->
+      <!-- <div>
+        <p>SGN</p>
+        <p id="description"></p>
+        <p id="temp"></p>
+      </div> -->
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="script.js"></script>

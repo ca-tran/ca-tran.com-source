@@ -76,8 +76,7 @@ header {
 }
 
 footer {
-    /* bottom: 0; */
-    /* border-top: 1px solid var(--color-black); */
+    bottom: 0;
     margin-top: 50px;
     margin-bottom: 30px;
 }
@@ -154,17 +153,9 @@ p, li {
 .no-arrow-link:hover::after {
     content: "";
 }
-
 /*Cursors*/
 
-
-
-
-/*
-===================================
-SPLASH SCREEN
-===================================
-*/
+/*======== SPLASH ========*/
 .splash {
     position: fixed;
     top: 0;
@@ -178,11 +169,7 @@ SPLASH SCREEN
     z-index: 1;
 }
 
-/*
-===================================
-MANUAL LIGHT/DARK MODE
-===================================
-*/
+/*==== LIGHT/DARK MODE ====*/
 .dark-mode-button, .light-mode-button {
     margin-right: 15px;
     display: inline-block;
@@ -207,12 +194,18 @@ MANUAL LIGHT/DARK MODE
     transition-timing-function: ease-in;
 }
 
-/*
-===================================
-MOBILE
-===================================
-*/
+/*=========== CURRENT WEATHER ===========*/
+/* #current {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
 
+.temp:after {
+	content: '\00b0';
+	margin-right: -0.3em;
+} */
+
+/*=========== MOBILE ===========*/
 body {
     margin-left: 30px;
     margin-right: 40px;
@@ -505,11 +498,7 @@ footer {
     to { transform: translateX(0); }
 }
 
-/*
-===================================
-TABLET - SMALL DESKTOP
-===================================
-*/
+/*======== TABLET - SMALL DESKTOP ========*/
 @media (min-width: 576px) {
 
     body {
@@ -583,11 +572,7 @@ TABLET - SMALL DESKTOP
 }
 
 
-/*
-===================================
-WIDE DESKTOP
-===================================
-*/
+/*======== WIDE DESKTOP ========*/
 @media (min-width: 1440px) {
     .col {
         min-height: 80vh;
@@ -656,11 +641,7 @@ WIDE DESKTOP
     } */
 }
 
-/*
-===================================
-PREFERRED AUTO LIGHT/DARK MODE
-===================================
-*/
+/*======== AUTO LIGHT/DARK MODE ========*/
 
 /* @media (prefers-color-scheme: light) {
     :root {
