@@ -156,12 +156,17 @@ p, li {
 
 #bio-expertise:hover, #multiple-sectors:hover, .view-portfolio:hover {
     text-decoration: none;
-    transition-duration: 1000ms;
 }
 
 .no-arrow-link:hover::after {
     content: "";
 }
+
+#greetings {
+    user-select: none;
+}
+
+
 /*=========== CURSORS ===========*/
 
 
@@ -375,8 +380,11 @@ nav li a:hover::after {
 
 /*Mobile Bio Logo*/
 .bio-logo {
-    height: 1.6rem;
-    margin-bottom: -35px;
+    display: block;
+    height: 1.5rem;
+    padding-bottom: 4px;
+    user-select: none;
+    pointer-events: none;
 }
 
 /*Mobile Hidden*/
@@ -385,7 +393,8 @@ nav li a:hover::after {
 }
 
 .opacity-hidden {
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
 }
 
 /*Mobile Header*/
