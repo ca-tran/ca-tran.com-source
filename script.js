@@ -23,20 +23,44 @@ function lightMode() {
   lightElement.classList.toggle("light-mode");
 }
 
-//Display Sectors
+//EXPERTISE
+function displayExpertise() {
+	const bioExpertise = document.querySelector("#bio-expertise");
+	bioExpertise.innerText = "art direction, print, motion & photography.";
+	bioExpertise.style.textDecoration = "none";
+	bioExpertise.style.backgroundColor = "var(--color-bg-white)";
+	bioExpertise.style.color = "var(--color-black)";  
+  }
+  
+//SECTORS
 function displaySectors() {
-  const bioSectors = document.querySelector("#bio-sectors");
+  const bioSectors = document.querySelector(".bio-sectors");
   bioSectors.innerText = "from Education, NGOs, Advertising, Healthcare, Fintech to F&B and Nightlife,";
   const bioSectorsLink = document.querySelector("#multiple-sectors")
   bioSectorsLink.style.textDecoration = "none";
-
+  bioSectorsLink.style.backgroundColor = "var(--color-bg-white)";
+  bioSectorsLink.style.color = "var(--color-black)";
 }
 
-//Display expertise
-function displayExpertise() {
-  const bioExpertise = document.querySelector("#bio-expertise");
-  bioExpertise.innerText = "graphic design & motion graphics.";
-  bioExpertise.style.textDecoration = "none";
+//SLIDESHOW
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < slides.length; i++) {
+    slides[i].className = slides[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  slides[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 
 //SVG TRACE
