@@ -7,6 +7,7 @@ function refreshTime() {
   }
     setInterval(refreshTime, 0);
 
+
 //DARK MODE
 function darkMode() {
   var darkElement = document.body;
@@ -95,82 +96,23 @@ function showSlides() {
 // }))
 
 
-//WUNDERGROUNDWEATHER
-$(document).ready(function () {
-	var currentDate,
-			currentLocation = 70000, // Default to Chicago
-			currentTemp = [],
-			currentUnits = 'c'; // Default to Fahrenheit
+//WEATHER CHATGPT//
+const apiKey = "9f6562695ed85f8105bf1d55df422373"; // Replace with your own OpenWeatherMap API key
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent("Ho Chi Minh")}&units=metric&appid=${apiKey}`;
 
-	// ---------------
-	// Weather API
-	// ---------------
-	
-	// Send request to API to get weather data
-	function getWeather(location) {
-		var weatherRequest = $.ajax({
-			method: 'GET',
-			url: '' + location + '.json'
-		});
-	}
-	
-	// Grab only the needed info from weather request and return
-	function processData(data) {
-		var current = data.current_observation;
-		var daily = data.forecast.simpleforecast.forecastday;
-		// Store values for current date, location, and temp
-		currentLocation = current.display_location.city + ', ' + current.display_location.state;
-		currentTemp = {
-			c: current.temp_c,
-		};
-		forecast.length = 0; // Empty array first
-		// Display weather ONLY after processing
-		displayWeather();
-	}
-	
-	// Display data on page
-	function displayWeather() {
-		// Separate today's forecast from the rest
-		var today = forecast.shift();
-		// Today - Print weather data
-		$('#current .conditions').html(today.conditions);
-		$('#lastUpdated').html('Last updated at ' + getCurrentTime());
-		// Get/update temps with current units
-		updateTemps(currentUnits);
-	}
-	
-	// Update temps and add to page
-	function updateTemps(units) {
-		$('#current .temp').html(Math.round(currentTemp[units]));
-		$forecastDivs.each(function(index) {
-			$(this).find('.high').html(forecast[index][units].high);
-			$(this).find('.low').html(forecast[index][units].low);
-		});
-	}
-	
-	// ------------------------
-	// Functions to run onload
-	// ------------------------ 
-	window.onload = function() {
-		getWeather(currentLocation); // Default to get Chicago weather
-		// Suggest to share location with message and button animation
-	};
-});
-
-
-//openweathermap WEATHER
-// var descrip = document.querySelector('#description');
-// var temp = document.querySelector('#temp');
-
-// window.onload = function() {
-//   fetch('https://api.openweathermap.org/data/2.5/weather?id=1566083&appid=9f6562695ed85f8105bf1d55df422373&units=metric')
-//   .then(res => res.json())
-
-//   .then(data => 
-//   {
-//     var descrip = data['weather']['0']['description']
-//     var tempature = data['main']['temp']
-//     temp.innerHTML = `Temperature: <span>${ convertion(tempature)} C</span>`
-//     description.innerHTML = `Conditions: <span>${descrip}<span>`
-//   })
-// };
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    const weatherDescription = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
+    const temperature = Math.round(data.main.temp);
+    const city = data.name;
+    const country = data.sys.country;
+    
+    const weatherText = `${temperature}°C — ${weatherDescription}`;
+    
+    const weatherElement = document.getElementById("weather-text");
+    weatherElement.textContent = weatherText; // Set the text content of the HTML element with ID "weather-text" to the weather text
+  })
+  .catch(error => {
+    console.error(`Error fetching weather data: ${error}`);
+  });
