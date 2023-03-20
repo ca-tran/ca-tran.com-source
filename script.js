@@ -96,8 +96,8 @@ function showSlides() {
 // }))
 
 
-//WEATHER CHATGPT//
-const apiKey = "9f6562695ed85f8105bf1d55df422373"; // Replace with your own OpenWeatherMap API key
+//CURRENT WEATHER//
+const apiKey = "9f6562695ed85f8105bf1d55df422373"; // OpenWeatherMap API key
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent("Ho Chi Minh")}&units=metric&appid=${apiKey}`;
 
 fetch(apiUrl)
