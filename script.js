@@ -10,7 +10,7 @@ function refreshTime() {
 //EXPERTISE
 function displayExpertise() {
   const bioExpertise = document.querySelector("#bio-expertise");
-  bioExpertise.textContent = "art direction, print, motion & photography.";
+  bioExpertise.textContent = "art direction, print, motion, photography & front-end.";
   bioExpertise.style.textDecoration = "none";
   bioExpertise.style.backgroundColor = "inherit";
   bioExpertise.style.color = "inherit";
@@ -19,7 +19,7 @@ function displayExpertise() {
 //SECTORS
 function displaySectors() {
   const bioSectors = document.querySelector(".bio-sectors");
-  bioSectors.textContent = "from Education, NGOs, Advertising, Healthcare, Fintech to F&B and Nightlife,";
+  bioSectors.textContent = "from Education, NGOs, non-profit, Advertising, Healthcare, Fintech to F&B and Nightlife,";
   const bioSectorsLink = document.querySelector("#multiple-sectors");
   bioSectorsLink.style.textDecoration = "none";
   bioSectorsLink.style.backgroundColor = "inherit";
