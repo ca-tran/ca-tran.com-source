@@ -10,7 +10,7 @@ h3 {
 
 /* SPLASH BG */
 .splash {
-    background-color: var(--color-black-1c);
+    background-color: var(--color-black-dark-mode);
 }
 
 /* LOGOS */
@@ -24,12 +24,30 @@ h3 {
 
 /* BODY BG & PATTERN */
 body {
-    background-color: var(--color-black-1c);
+    background-color: var(--color-black-dark-mode);
     color: var(--color-bg-white);
 }
 
 .bg-img {
-    background-image: url(images/svg/svg-bg-darkmode.svg);
+    background-image: none;
+}
+
+@media (min-width: 576px) {
+    .bg-img {
+        background-image: url(images/svg/svg-bg-darkmode.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
+
+@media (min-width: 1440px) {
+    .bg-img {
+        background-image: url(images/svg/svg-bg-darkmode.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
 }
 
 /* SEPARATOR LINES */
@@ -40,6 +58,6 @@ body {
 /* HOVER LINKS */
 a:hover {
     background-color: var(--color-bg-white);
-    color: var(--color-black-1c);
+    color: var(--color-black);
 }
 

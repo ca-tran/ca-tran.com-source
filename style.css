@@ -51,6 +51,7 @@ SHARED CSS
     --color-gray: #D1D1D1;
     --color-black-1c: #1C1C1C;
     --color-black: rgb(15, 15, 15);
+    --color-black-dark-mode: #141414;
   }
 
 html {
@@ -124,8 +125,8 @@ p, li {
 }
 
 .separator {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 4px;
 }
 
 .separator::after {
@@ -174,7 +175,52 @@ p, li {
     text-align: left;
 }
 
-/*=========== CURSORS ===========*/
+/*=========== PORTFOLIO Slide ===========*/
+.folio-slide {
+    animation: slide 2s infinite;
+}
+
+@keyframes slide {
+    0% { 
+        transform: translateX(0px) 
+    }
+    50% { 
+        transform: translateX(10px) 
+    }
+    100% { 
+        transform: translateX(0px) 
+    }
+  }
+
+
+/* CYCLE TEXT ANIMATION */
+  .cycle-text p {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    animation: cycle 2s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+  
+  @keyframes cycle {
+    0% {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    25% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    75% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+  }
+
 
 
 /*=========== SLIDESHOW ===========*/

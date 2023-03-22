@@ -89,7 +89,7 @@ fetch(apiUrl)
 //NEW DARK MODE WITH dark-mode.css
 // Check if it's currently between 6pm and 7am in the user's timezone
 const currentTime = new Date();
-const isNighttime = currentTime.getHours() >= 18 || currentTime.getHours() < 7;
+const isNighttime = currentTime.getHours() >= 19 || currentTime.getHours() < 7;
 
 if (isNighttime) {
   // Create a link element for the dark mode stylesheet
