@@ -12,8 +12,8 @@ function displayExpertise() {
   const bioExpertise = document.querySelector("#bio-expertise");
   bioExpertise.textContent = "art direction, print, motion & photography.";
   bioExpertise.style.textDecoration = "none";
-  bioExpertise.style.backgroundColor = "var(--color-bg-white)";
-  bioExpertise.style.color = "var(--color-black)";
+  bioExpertise.style.backgroundColor = "inherit";
+  bioExpertise.style.color = "inherit";
 }
   
 //SECTORS
@@ -22,8 +22,8 @@ function displaySectors() {
   bioSectors.textContent = "from Education, NGOs, Advertising, Healthcare, Fintech to F&B and Nightlife,";
   const bioSectorsLink = document.querySelector("#multiple-sectors");
   bioSectorsLink.style.textDecoration = "none";
-  bioSectorsLink.style.backgroundColor = "var(--color-bg-white)";
-  bioSectorsLink.style.color = "var(--color-black)";
+  bioSectorsLink.style.backgroundColor = "inherit";
+  bioSectorsLink.style.color = "inherit";
 }
 
 //SLIDESHOW
