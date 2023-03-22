@@ -7,23 +7,6 @@ function refreshTime() {
   }
     setInterval(refreshTime, 0);
 
-
-//DARK MODE
-function darkMode() {
-  const darkElement = document.body;
-  const lightButton = document.querySelector(".light-mode-button");
-  darkElement.classList.remove("light-mode");
-  darkElement.classList.toggle("dark-mode");
-}
-
-//LIGHT MODE
-function lightMode() {
-  const lightElement = document.body;
-  const darkButton = document.querySelector(".dark-mode-button");
-  lightElement.classList.remove("dark-mode");
-  lightElement.classList.toggle("light-mode");
-}
-
 //EXPERTISE
 function displayExpertise() {
   const bioExpertise = document.querySelector("#bio-expertise");
@@ -82,21 +65,6 @@ function showSlides() {
 //     i = ++i % greets.length;
 // };
 
-//MOBILE NAV & BURGER
-// const navBurger = document.querySelector(".nav-burger");
-// const navMenu = document.querySelector(".nav-menu");
-
-// navBurger.addEventListener("click", () => {
-//   navBurger.classList.toggle("active");
-//   navMenu.classList.toggle("active");
-// })
-
-// document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-//   navBurger.classList.remove("active");
-//   navMenu.classList.remove("active");
-// }))
-
-
 //CURRENT WEATHER//
 const apiKey = "9f6562695ed85f8105bf1d55df422373"; // OpenWeatherMap API key
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent("Ho Chi Minh")}&units=metric&appid=${apiKey}`;
@@ -117,3 +85,54 @@ fetch(apiUrl)
   .catch(error => {
     console.error(`Error fetching weather data: ${error}`);
   });
+
+//NEW DARK MODE WITH dark-mode.css
+// Check if it's currently between 6pm and 7am in the user's timezone
+const currentTime = new Date();
+const isNighttime = currentTime.getHours() >= 18 || currentTime.getHours() < 7;
+
+if (isNighttime) {
+  // Create a link element for the dark mode stylesheet
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'dark-mode.css';
+
+  // Add the link element to the page's head element
+  document.head.appendChild(link);
+} else {
+  // Remove any existing link elements for the dark mode stylesheet
+  const links = document.head.getElementsByTagName('link');
+  for (let i = 0; i < links.length; i++) {
+    const link = links[i];
+    if (link.href.includes('dark-mode.css')) {
+      document.head.removeChild(link);
+    }
+  }
+}
+
+//LIGHT DARK MODE MANUAL
+// //DARK MODE
+// function darkMode() {
+//   const darkElement = document.body;
+//   const lightButton = document.querySelector(".light-mode-button");
+//   darkElement.classList.remove("light-mode");
+//   darkElement.classList.toggle("dark-mode");
+// }
+
+// //LIGHT MODE
+// function lightMode() {
+//   const lightElement = document.body;
+//   const darkButton = document.querySelector(".dark-mode-button");
+//   lightElement.classList.remove("dark-mode");
+//   lightElement.classList.toggle("light-mode");
+// }
+
+// //DARK MODE
+// function darkMode() {
+//   const link = document.createElement('link');
+//   link.rel = 'stylesheet';
+//   link.href = 'dark-mode.css';
+
+//   // Add the link element to the page's head element
+//   document.head.appendChild(link);
+// }

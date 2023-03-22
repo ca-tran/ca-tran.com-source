@@ -1,0 +1,44 @@
+/*==== LIGHT/DARK MODE ====*/
+
+#bio h1 img {
+
+}
+
+h3 {
+    color: #9e9e9e;
+}
+.slideshow-container img {
+    filter: invert(1);
+}
+
+.splash {
+    background-color: var(--color-black-1c);
+}
+
+.splash-logo {
+    filter: invert(1);
+}
+
+.bio-logo {
+    filter: invert(1);
+}
+
+body {
+    background-color: var(--color-black-1c);
+    color: var(--color-bg-white);
+}
+
+.bg-img {
+    background-image: url(images/svg/svg-bg-darkmode.svg);
+}
+
+.hr-line {
+    border-bottom: 1px solid var(--color-bg-white);
+}
+
+/* HOVER LINKS */
+a:hover {
+    background-color: var(--color-bg-white);
+    color: var(--color-black-1c);
+}
+
