@@ -10,7 +10,7 @@ function refreshTime() {
 //EXPERTISE
 function displayExpertise() {
   const bioExpertise = document.querySelector("#bio-expertise");
-  bioExpertise.textContent = "art direction, print, motion, photography & front-end.";
+  bioExpertise.textContent = "art direction, print, motion, photography, front-end and generative art.";
   bioExpertise.style.textDecoration = "none";
   bioExpertise.style.backgroundColor = "inherit";
   bioExpertise.style.color = "inherit";
@@ -109,6 +109,54 @@ if (isNighttime) {
     }
   }
 }
+
+
+//RANDOM IMG OVERLAY
+const images = [
+  "images/overlay-images/artwork/Civil-War.gif",
+  "images/overlay-images/artwork/fighter.gif",
+  "images/overlay-images/artwork/Planet1.png",
+  "images/overlay-images/artwork/Planet2.png",
+  "images/overlay-images/artwork/Planet3.png",
+  "images/overlay-images/artwork/Planet4.png",
+  "images/overlay-images/artwork/Planet5.png",
+  "images/overlay-images/artwork/Planet6.png",
+  "images/overlay-images/artwork/Planet7.png",
+  "images/overlay-images/artwork/Planet8.png",
+  "images/overlay-images/artwork/Planet9.png",
+  "images/overlay-images/artwork/Rampage.gif",
+  "images/overlay-images/artwork/Redemption.gif",
+  "images/overlay-images/artwork/screenprint1.jpg",
+  "images/overlay-images/artwork/screenprint2.jpg",
+  "images/overlay-images/artwork/screenprint4.jpg",
+  "images/overlay-images/artwork/uss-arkansas gif.gif",
+  "images/overlay-images/artwork/War-&-Civilization.gif",
+  "images/overlay-images/artwork/War-Horse.gif"
+];
+
+let currentIndex = -1;
+
+function getRandomImage() {
+  let index = Math.floor(Math.random() * images.length);
+  if (index === currentIndex) {
+    index = (index + 1) % images.length;
+  }
+  currentIndex = index;
+  return images[currentIndex];
+}
+
+function setOverlayImage() {
+    const imageUrl = getRandomImage();
+    const overlayImg = document.querySelector(".overlay-img");
+    overlayImg.src = imageUrl;
+}
+
+setOverlayImage();
+
+window.setInterval(() => {
+    setOverlayImage();
+}, 4000);
+
 
 //LIGHT DARK MODE MANUAL
 // //DARK MODE
