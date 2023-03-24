@@ -48,12 +48,6 @@ function showSlides() {
     setTimeout(showSlides, 2000);
 }
 
-//SVG TRACE
-//get svg length
-
-// var path = document.querySelector('.path');
-// var length = path.getTotalLength()
-
 //CYCLE TEXT
 // var greets = $('div[id^="hello-"]').hide(),
 //     i = 0;
@@ -110,6 +104,23 @@ if (isNighttime) {
   }
 }
 
+//GREETS BASED ON TIME
+// const timeGreets = document.querySelector(".time-greets")
+// const isMorning = currentTime.getHours() >= 7 || currentTime.getHours() < 18;
+// const isEvening = currentTime.getHours() >= 18 || currentTime.getHours() < 21;
+// if (isMorning) {
+//   timeGreets.textContent = "G'day,";
+// } 
+// if (isAfternoon) {
+//   timeGreets.textContent = "Good afternoon,";
+// }
+// if (isEvening) {
+//   timeGreets.textContent = "Good evening,";
+// }
+// if (isMidnight) {
+//   timeGreets.textContent = "Good night,";
+// }
+
 
 //RANDOM IMG OVERLAY
 const images = [
@@ -129,7 +140,7 @@ const images = [
   "images/overlay-images/artwork/screenprint1.jpg",
   "images/overlay-images/artwork/screenprint2.jpg",
   "images/overlay-images/artwork/screenprint4.jpg",
-  "images/overlay-images/artwork/uss-arkansas gif.gif",
+  "images/overlay-images/artwork/uss-arkansas-gif.gif",
   "images/overlay-images/artwork/War-&-Civilization.gif",
   "images/overlay-images/artwork/War-Horse.gif"
 ];
@@ -157,6 +168,14 @@ window.setInterval(() => {
     setOverlayImage();
 }, 4000);
 
+
+//AUTO COPYRIGHT CURRENT YEAR, I'M LAZY TO UPDATE MY WEB
+const currentYear = document.getElementById("current-year");
+
+window.onload = function() {
+    const getCurrentYear = new Date().getFullYear();
+    currentYear.textContent = getCurrentYear;
+}
 
 //LIGHT DARK MODE MANUAL
 // //DARK MODE
