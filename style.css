@@ -258,7 +258,7 @@ p, li {
     margin-top: 20px;
     width: 75px;
     height: 1.5rem;
-    background-image: linear-gradient(to left, var(--color-black-1c), transparent);    
+    background-image: linear-gradient(to left, transparent, var(--color-bg-white));    
     z-index: 1;
 }
 
