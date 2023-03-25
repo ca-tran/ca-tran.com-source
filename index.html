@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta tags for social media sharing -->
     <meta
       name="description"
       content="Ca Tran — Art Director & Digital Designer who creates brand identities and visual solutions, currently based in Saigon, Vietnam."
     />
-    <!-- meta social -->
     <meta
       property="og:title"
       content="Ca Tran — Art Director & Digital Designer"
@@ -19,29 +19,17 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ca-tran.com" />
-    <meta property="og:image" content="images/og image/catran-og-image.png" />
+    <meta property="og:image" content="images/og-image/catran-og-image.png" />
+    <!-- Page title and canonical link -->
     <title>Ca Tran — Art Director & Digital Designer</title>
     <link rel="canonical" href="https://ca-tran.com/" />
-    <!-- animate.style animation css -->
+    <!-- Animations and styles -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <!-- css -->
     <link rel="stylesheet" href="style.css" />
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <!-- favicon -->
+    <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="images/favicon/favicon.png"
@@ -75,7 +63,10 @@
             Digital Designer,<br />
             based in Vietnam.
           </h2>
-          <br />
+          <div class="faces-container">
+            <img class="faces-img" src="" alt="" />
+          </div>
+          <div class="marquee-txt-overlay"></div>
           <marquee
             id="greetings"
             direction="right"
@@ -130,10 +121,8 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Xin Chào
           </marquee>
-          <br />
-          <br />
           <!-- TIME-BASED GREETS -->
-          <!-- <p class="time-greets"></p>
+          <!-- <div><p class="time-greets"></p></div>
           <div class="separator"></div> -->
           <p>
             Vietnamese designer & artist whose expertise varies from digital
@@ -170,8 +159,10 @@
           </p>
           <div class="separator"></div>
           <h3>Creative Portfolio</h3>
+          <div class="white-echo"></div>
           <div class="folio-slide">
             <p>
+              <!-- <span class="view-portfolio-arrow">→</span> -->
               <a
                 class="view-portfolio"
                 href="https://drive.google.com/file/d/1trYmxM-hdIg17DgqgHUi0inq5z2p550n/view?usp=share_link"
@@ -179,38 +170,6 @@
                 >View My Projects</a
               >
             </p>
-          </div>
-          <div class="slideshow-container">
-            <div class="mySlides fade">
-              <img src="images/faces/test 1.svg" style="width: 100%" />
-            </div>
-            <div class="mySlides fade">
-              <img src="images/faces/test 2.svg" style="width: 100%" />
-            </div>
-            <div class="mySlides fade">
-              <img src="images/faces/test 3.svg" style="width: 100%" />
-            </div>
-            <div class="mySlides fade">
-              <img src="images/faces/test 4.svg" style="width: 100%" />
-            </div>
-            <div class="mySlides fade">
-              <img src="images/faces/test 5.svg" style="width: 100%" />
-            </div>
-            <div class="mySlides fade">
-              <img src="images/faces/test 6.svg" style="width: 100%" />
-            </div>
-            <div class="mySlides fade">
-              <img src="images/faces/test 7.svg" style="width: 100%" />
-            </div>
-            <div class="mySlides fade">
-              <img src="images/faces/test 8.svg" style="width: 100%" />
-            </div>
-            <div class="mySlides fade">
-              <img src="images/faces/test 9.svg" style="width: 100%" />
-            </div>
-            <div class="mySlides fade">
-              <img src="images/faces/test 10.svg" style="width: 100%" />
-            </div>
           </div>
         </section>
         <section id="experience" class="col column-2">
@@ -239,25 +198,33 @@
             <li>Photography</li>
           </ul>
           <div class="separator"></div>
-          <h3>Art Genres</h3>
-          <li>Experimental Art</li>
-          <li>Generative Art</li>
-          <li>Datamoshing</li>
-          <div class="separator"></div>
-          <h3>Design Services</h3>
-          <ul>
-            <li>Digital & Web</li>
-            <li>Graphic & Print</li>
-            <li>Logo & Packaging</li>
-            <li>Multimedia & Motion</li>
-          </ul>
-          <div class="separator"></div>
           <h3>Recognition</h3>
           <a
             href="https://campaignbriefasia.com/2021/11/04/dentsu-redder-named-vietnams-creative-agency-of-the-year-following-the-release-of-campaign-brief-asias-2021-creative-rankings/"
             target="_blank"
             >2021 Campaign Brief Asia</a
           >
+          <div class="separator"></div>
+          <div class="white-echo-exp"></div>
+          <div class="see-more-exp-btn" onclick="seeMoreExp()">
+            <p>
+              <a>More Experience</a>
+            </p>
+          </div>
+          <div id="more-exp">
+            <h3>Art Genres</h3>
+            <li>Experimental Art</li>
+            <li>Generative Art</li>
+            <li>Datamoshing</li>
+            <div class="separator"></div>
+            <h3>Design Services</h3>
+            <ul>
+              <li>Digital & Web</li>
+              <li>Graphic & Print</li>
+              <li>Logo & Packaging</li>
+              <li>Multimedia & Motion</li>
+            </ul>
+          </div>
         </section>
         <section id="career" class="col column-3">
           <h2>Career</h2>
@@ -342,136 +309,157 @@
         <section id="brands" class="col column-4">
           <h2>Selected Brands</h2>
           <div class="hr-line"></div>
-          <h3>Vietnam</h3>
-          <ul>
-            <li>
-              <a href="https://bitis.com.vn/" rel="nofollow" target="_blank"
-                >Biti’s</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/bambam.sgn/?hl=en"
-                rel="nofollow"
-                target="_blank"
-                >BamBam</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/commas.sgn/?hl=en"
-                rel="nofollow"
-                target="_blank"
-                >COMMAS</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://orion.vn/san-pham/banh-chocopie-truyen-thong/"
-                rel="nofollow"
-                target="_blank"
-                >Chocopie</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/godmother.vn/?hl=en"
-                rel="nofollow"
-                target="_blank"
-                >Godmother</a
-              >
-            </li>
-            <li>
-              <a href="https://hdbank.com.vn/" rel="nofollow" target="_blank"
-                >HDBank</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.highlandscoffee.com.vn/"
-                rel="nofollow"
-                target="_blank"
-                >Highlands</a
-              >
-            </li>
-            <li>
-              <a href="https://minhlong.com/" rel="nofollow" target="_blank"
-                >Minh Long</a
-              >
-            </li>
-          </ul>
-          <div class="separator"></div>
-          <h3>Australia</h3>
-          <ul>
-            <li>
-              <a
-                href="https://lightingspaces.com.au/"
-                rel="nofollow"
-                target="_blank"
-                >Lighting Spaces</a
-              >
-            </li>
-            <li>
-              <a href="https://www.nica.com.au/" rel="nofollow" target="_blank"
-                >National Institute of Circus Arts</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.spiritualhealth.org.au/"
-                rel="nofollow"
-                target="_blank"
-                >Spiritual Health Victoria</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.berrystreet.org.au/"
-                rel="nofollow"
-                target="_blank"
-                >Berry Street Victoria</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.zoo.org.au/melbourne/"
-                rel="nofollow"
-                target="_blank"
-                >Melbourne Zoo</a
-              >
-            </li>
-          </ul>
-          <div class="separator"></div>
-          <h3>United States</h3>
-          <ul>
-            <li>
-              <a href="https://azurity.com/" rel="nofollow" target="_blank"
-                >Azurity Pharmaceuticals</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.crowdpharm.com/"
-                rel="nofollow"
-                target="_blank"
-                >Crowd Pharm</a
-              >
-            </li>
-            <li>
-              <a href="https://zogenix.com" rel="nofollow" target="_blank"
-                >Zogenix INC</a
-              >
-            </li>
-          </ul>
-          <div class="separator"></div>
-          <h3>France</h3>
-          <ul>
-            <li>
-              <a href="https://www.mam-son.com/" rel="nofollow" target="_blank"
-                >Mamson Caphe & Restaurant</a
-              >
-            </li>
-          </ul>
+          <div id="all-brands">
+            <div id="local-brands">
+              <h3>Vietnam</h3>
+              <ul>
+                <li>
+                  <a href="https://bitis.com.vn/" rel="nofollow" target="_blank"
+                    >Biti’s</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/bambam.sgn/?hl=en"
+                    rel="nofollow"
+                    target="_blank"
+                    >BamBam</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/commas.sgn/?hl=en"
+                    rel="nofollow"
+                    target="_blank"
+                    >COMMAS</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://orion.vn/san-pham/banh-chocopie-truyen-thong/"
+                    rel="nofollow"
+                    target="_blank"
+                    >Chocopie</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/godmother.vn/?hl=en"
+                    rel="nofollow"
+                    target="_blank"
+                    >Godmother</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.highlandscoffee.com.vn/"
+                    rel="nofollow"
+                    target="_blank"
+                    >Highlands</a
+                  >
+                </li>
+                <li>
+                  <a href="https://minhlong.com/" rel="nofollow" target="_blank"
+                    >Minh Long</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://muadee.com.vn/"
+                    rel="nofollow"
+                    target="_blank"
+                    >Muadee HDBank</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="separator"></div>
+            <h3>Australia</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://lightingspaces.com.au/"
+                  rel="nofollow"
+                  target="_blank"
+                  >Lighting Spaces</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.nica.com.au/"
+                  rel="nofollow"
+                  target="_blank"
+                  >National Institute of Circus Arts</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.spiritualhealth.org.au/"
+                  rel="nofollow"
+                  target="_blank"
+                  >Spiritual Health Victoria</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.berrystreet.org.au/"
+                  rel="nofollow"
+                  target="_blank"
+                  >Berry Street Victoria</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.zoo.org.au/melbourne/"
+                  rel="nofollow"
+                  target="_blank"
+                  >Melbourne Zoo</a
+                >
+              </li>
+            </ul>
+            <div class="separator"></div>
+            <div class="white-echo-brands"></div>
+            <div class="see-more-brands-btn" onclick="seeMoreBrands()">
+              <p>
+                <a>More Brands</a>
+              </p>
+            </div>
+            <div id="overseas-brands">
+              <h3>United States</h3>
+              <ul>
+                <li>
+                  <a href="https://azurity.com/" rel="nofollow" target="_blank"
+                    >Azurity Pharmaceuticals</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.crowdpharm.com/"
+                    rel="nofollow"
+                    target="_blank"
+                    >Crowd Pharm</a
+                  >
+                </li>
+                <li>
+                  <a href="https://zogenix.com" rel="nofollow" target="_blank"
+                    >Zogenix INC</a
+                  >
+                </li>
+              </ul>
+              <div class="separator"></div>
+              <h3>France</h3>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.mam-son.com/"
+                    rel="nofollow"
+                    target="_blank"
+                    >Mamson Caphe & Restaurant</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
         <section id="contact" class="col column-5">
           <h2>Contact</h2>
