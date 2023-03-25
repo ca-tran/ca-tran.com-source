@@ -191,28 +191,48 @@ p, li {
 
 /*=========== PORTFOLIO SLIDE-IN-OUT ===========*/
 .folio-slide {
-    margin-left: 15px;
     position: absolute;
     display: inline-block;
+    transform: translateX(10px);
     animation: folio-slide 2s ease-in-out infinite;
 }
 
 @keyframes folio-slide {
     0% { 
-        transform: translateX(0px) 
-    }
-    50% { 
         transform: translateX(10px) 
     }
+    50% { 
+        transform: translateX(20px) 
+    }
     100% { 
-        transform: translateX(0px) 
+        transform: translateX(10px) 
     }
   }
+
+/* SEE MORE EXP & BRANDS */
+.see-more-brands-btn, .see-more-exp-btn {
+    display: inherit;
+    opacity: 1;
+    text-decoration: underline;
+    font-weight: normal;
+    transition: opacity 1s ease-in-out;
+}
+
+.see-more-brands-btn, .see-more-exp-btn{
+    animation: folio-slide 2s ease-in-out infinite;
+}
+
+#overseas-brands, #more-exp {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
+}
 
 /*WHITE ECHO*/
 .white-echo, .white-echo-exp, .white-echo-brands {
     position: absolute;
-    width: 0px;
+    width: 5px;
     height: 1.1rem;
     background-image: linear-gradient(to left, var(--color-black-1c), transparent);
     animation: white-echo 2s ease-in-out infinite;
@@ -343,27 +363,6 @@ h2 {
 h3 {
     margin-bottom: 5px;
     font-size: 1rem;
-}
-
-/* SEE MORE EXP & BRANDS */
-.see-more-brands-btn, .see-more-exp-btn {
-    display: inherit;
-    opacity: 1;
-    text-decoration: underline;
-    font-weight: normal;
-    transition: opacity 1s ease-in-out;
-}
-
-.see-more-brands-btn, .see-more-exp-btn{
-    margin-left: 15px;
-    animation: folio-slide 2s ease-in-out infinite;
-}
-
-#overseas-brands, #more-exp {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s ease-in-out;
 }
 
 /*Mobile column heights, update when sticky nav ready*/
