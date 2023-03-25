@@ -26,27 +26,44 @@ function displaySectors() {
   bioSectorsLink.style.color = "inherit";
 }
 
-//SLIDESHOW
-let slideIndex = 0;
-showSlides();
+//FACES
 
-function showSlides() {
-    const slides = document.getElementsByClassName("mySlides");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-        slides[i].classList.remove("active");
-    }
+const faces = [
+  "images/faces/face-1.svg",
+  "images/faces/face-2.svg",
+  "images/faces/face-3.svg",
+  "images/faces/face-4.svg",
+  "images/faces/face-5.svg",
+  "images/faces/face-6.svg",
+  "images/faces/face-7.svg",
+  "images/faces/face-8.svg",
+  "images/faces/face-9.svg",
+  "images/faces/face-10.svg"
+];
 
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1
-    }
-    
-    slides[slideIndex-1].style.display = "block";
-    slides[slideIndex-1].classList.add("active");
-    
-    setTimeout(showSlides, 2000);
+let currentFaceIndex = -1;
+
+function getRandomFace() {
+  let index = Math.floor(Math.random() * faces.length);
+  if (index === currentFaceIndex) {
+    index = (index + 1) % faces.length;
+  }
+  currentFaceIndex = index;
+  return faces[currentFaceIndex];
 }
+
+function setFace() {
+    const faceUrl = getRandomFace();
+    const faceImg = document.querySelector(".faces-img");
+    faceImg.src = faceUrl;
+}
+
+setFace();
+
+window.setInterval(() => {
+    setFace();
+}, 2000);
+
 
 //CYCLE TEXT
 // var greets = $('div[id^="hello-"]').hide(),
@@ -175,6 +192,36 @@ const currentYear = document.getElementById("current-year");
 window.onload = function() {
     const getCurrentYear = new Date().getFullYear();
     currentYear.textContent = getCurrentYear;
+}
+
+//SEE MORE BRANDS
+const overseasBrands = document.querySelector("#overseas-brands");
+const seeMoreBrandsBtn = document.querySelector(".see-more-brands-btn");
+const seeMoreBrandsEcho = document.querySelector(".white-echo-brands")
+
+function seeMoreBrands() {
+  overseasBrands.style.visibility = "visible";
+  overseasBrands.style.opacity = "1";
+  overseasBrands.style.display = "inherit";
+  seeMoreBrandsBtn.style.display= "none";
+  seeMoreBrandsBtn.style.opacity = "0";
+  seeMoreBrandsEcho.style.dislay="none";
+  seeMoreBrandsEcho.style.opacity = "0";
+}
+
+//SEE MORE EXP
+const moreExp = document.querySelector("#more-exp");
+const seeMoreExpBtn = document.querySelector(".see-more-exp-btn");
+const seeMoreExpEcho = document.querySelector(".white-echo-exp")
+
+function seeMoreExp() {
+  moreExp.style.visibility = "visible";
+  moreExp.style.opacity = "1";
+  moreExp.style.display = "inherit";
+  seeMoreExpBtn.style.display= "none";
+  seeMoreExpBtn.style.opacity = "0";
+  seeMoreExpEcho.style.dislay="none";
+  seeMoreExpEcho.style.opacity = "0";
 }
 
 //LIGHT DARK MODE MANUAL

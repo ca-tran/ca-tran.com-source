@@ -175,12 +175,29 @@ p, li {
     text-align: left;
 }
 
-/*=========== PORTFOLIO Slide ===========*/
-.folio-slide {
-    animation: slide 2s infinite;
+/*=========== PORTFOLIO ARROW ===========*/
+/* .view-portfolio-arrow {
+    animation: arrow-before-portfolio 2s ease-in-out infinite;
 }
 
-@keyframes slide {
+@keyframes arrow-before-portfolio {
+    0% { 
+        opacity: 0
+    }
+    100% { 
+        opacity: 1
+    }
+} */
+
+/*=========== PORTFOLIO SLIDE-IN-OUT ===========*/
+.folio-slide {
+    margin-left: 15px;
+    position: absolute;
+    display: inline-block;
+    animation: folio-slide 2s ease-in-out infinite;
+}
+
+@keyframes folio-slide {
     0% { 
         transform: translateX(0px) 
     }
@@ -192,6 +209,20 @@ p, li {
     }
   }
 
+/*WHITE ECHO*/
+.white-echo, .white-echo-exp, .white-echo-brands {
+    position: absolute;
+    width: 0px;
+    height: 1.1rem;
+    background-image: linear-gradient(to left, var(--color-black-1c), transparent);
+    animation: white-echo 2s ease-in-out infinite;
+}
+
+@keyframes white-echo {
+    0% {width: 5px;}
+    50% {width: 15px;}
+    100% {width: 5px;}
+}
 
 /* CYCLE TEXT ANIMATION */
   .cycle-text p {
@@ -221,39 +252,36 @@ p, li {
     }
   }
 
-
-
-/*=========== SLIDESHOW ===========*/
-
-.slideshow-container {
-    display: block;
-    width: 30px;
+/*=========== MARQUEE ===========*/
+.marquee-txt-overlay {
+    position: absolute;
     margin-top: 20px;
-    right: 0;
-    z-index: -1;
+    width: 75px;
+    height: 1.5rem;
+    background-image: linear-gradient(to left, var(--color-black-1c), transparent);    
+    z-index: 1;
+}
+
+marquee {
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem;
+}
+
+/*=========== FACES ===========*/
+.faces-container {
+    position: absolute;
+    display: inline;
+    width: 30px;
+    padding-top: 0.9rem;
+    /* transform: translateX(-2px); */
+    z-index: 2;
     opacity: 100%;
   }
 
-.slideshow-container img {
+.faces-container img {
     pointer-events: none;
     user-select: none;
 }
-
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from {opacity: 0.5} 
-    to {opacity: 1}
-  }
-  
-  /* On smaller screens, decrease text size */
-  @media only screen and (max-width: 300px) {
-    .text {font-size: 11px}
-  }
   
 /*======== SPLASH ========*/
 .splash {
@@ -289,14 +317,13 @@ p, li {
     user-select: none;
     pointer-events: none;
 }
+
 .overlay-img {
     max-width: 40vw;
     max-height: 40vh;
     object-fit: contain;
     opacity: 60%;
 }
-
-
 
 /*=========== MOBILE ===========*/
 body {
@@ -318,22 +345,25 @@ h3 {
     font-size: 1rem;
 }
 
-nav a {
-    text-decoration: none;
+/* SEE MORE EXP & BRANDS */
+.see-more-brands-btn, .see-more-exp-btn {
+    display: inherit;
+    opacity: 1;
+    text-decoration: underline;
+    font-weight: normal;
+    transition: opacity 1s ease-in-out;
 }
 
-nav li {
-    /* padding: 20px; */
-    font-size: 1rem;
+.see-more-brands-btn, .see-more-exp-btn{
+    margin-left: 15px;
+    animation: folio-slide 2s ease-in-out infinite;
 }
 
-nav li a:hover {
-    background-color: var(--color-black-1c);
-    color: var(--color-bg-white);
-}
-
-nav li a:hover::after {
-    content: "";
+#overseas-brands, #more-exp {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
 }
 
 /*Mobile column heights, update when sticky nav ready*/
@@ -403,8 +433,11 @@ footer {
     row-gap: 45px;
 }
 
-/*GRID COLUMNS*/
-
+/*
+============
+GRID COLUMNS
+============
+*/
 .column-1 {
     grid-area: c1;
 }
@@ -425,9 +458,9 @@ footer {
 }
 
 /*
-===================================
+================
 SHARED ANIMATION
-===================================
+================
 */
 .col, footer, header, .overlay-container {
     opacity: 0;
@@ -504,11 +537,6 @@ footer {
         transform: translateX(100%);
         opacity: 0;
     }
-}
-
-@keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
 }
 
 @keyframes slide-up {
@@ -601,12 +629,13 @@ footer {
     .overlay-img {
         max-width: 30vw;
         max-height: 30vh;
-        object-fit: contain;
-        opacity: 60%;
+    }
+
+    #overseas-brands, #more-exp {
+        display: inherit;
     }
 
 }
-
 
 /*======== WIDE DESKTOP ========*/
 @media (min-width: 1440px) {
@@ -679,9 +708,9 @@ footer {
     .overlay-img {
         max-width: 30vw;
         max-height: 30vh;
-        object-fit: contain;
-        opacity: 60%;
     }
 
-
+    #overseas-brands, #more-exp {
+        display: inherit;
+    }
 }

@@ -4,8 +4,15 @@ h3 {
 }
 
 /* FACES */
-.slideshow-container img {
+.faces-container img {
     filter: invert(1);
+}
+
+.white-echo, .white-echo-exp, .white-echo-brands {
+    filter: invert(1);
+}
+.marquee-txt-overlay {
+    background-image: linear-gradient(to left, transparent, var(--color-black-dark-mode));
 }
 
 /* SPLASH BG */
