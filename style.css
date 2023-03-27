@@ -345,7 +345,11 @@ marquee {
     opacity: 60%;
 }
 
-/*=========== MOBILE ===========*/
+/*
+===========
+MOBILE
+===========
+*/
 body {
     margin-left: 30px;
     margin-right: 40px;
@@ -437,6 +441,9 @@ footer {
 GRID COLUMNS
 ============
 */
+.col {
+    margin-bottom: 35px;
+}
 .column-1 {
     grid-area: c1;
 }
@@ -548,7 +555,11 @@ footer {
     to { transform: translateX(0); }
 }
 
-/*======== TABLET - SMALL DESKTOP ========*/
+/*
+========
+TABLET - SMALL DESKTOP
+========
+*/
 @media (min-width: 576px) {
 
     body {
@@ -571,6 +582,10 @@ footer {
         "c1 c2 c3"
         "c1 c4 c5";
         column-gap: 50px;
+    }
+
+    .col {
+        margin-bottom: 0px;
     }
 
     nav {
@@ -630,13 +645,13 @@ footer {
         max-height: 30vh;
     }
 
-    #overseas-brands, #more-exp {
-        display: inherit;
-    }
-
 }
 
-/*======== WIDE DESKTOP ========*/
+/*
+========
+WIDE DESKTOP
+========
+*/
 @media (min-width: 1440px) {
     .col {
         min-height: 80vh;
@@ -672,6 +687,10 @@ footer {
         justify-content: start;
         align-items: start;
         column-gap: 50px;
+    }
+
+    .col {
+        margin-bottom: 0px;
     }
 
     nav {
