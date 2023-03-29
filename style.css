@@ -175,20 +175,6 @@ p, li {
     text-align: left;
 }
 
-/*=========== PORTFOLIO ARROW ===========*/
-/* .view-portfolio-arrow {
-    animation: arrow-before-portfolio 2s ease-in-out infinite;
-}
-
-@keyframes arrow-before-portfolio {
-    0% { 
-        opacity: 0
-    }
-    100% { 
-        opacity: 1
-    }
-} */
-
 /*=========== PORTFOLIO SLIDE-IN-OUT ===========*/
 .folio-slide {
     position: absolute;
@@ -429,8 +415,7 @@ footer {
     "c1"
     "c2"
     "c3"
-    "c4"
-    "c5";
+    "c4";
     justify-content: start;
     align-items: start;
     row-gap: 45px;
@@ -577,15 +562,15 @@ TABLET - SMALL DESKTOP
     .inner-grid {
         display: grid;
         grid-template-rows: auto;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
         grid-template-areas:
-        "c1 c2 c3"
-        "c1 c4 c5";
+        "c1 c2"
+        "c3 c4";
         column-gap: 50px;
     }
 
     .col {
-        margin-bottom: 0px;
+        margin-bottom: 35px;
     }
 
     nav {
@@ -605,7 +590,7 @@ TABLET - SMALL DESKTOP
     /*Tablet Footer*/
     footer {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(4,1fr);
         column-gap: 50px;
     }
 
@@ -681,12 +666,12 @@ WIDE DESKTOP
     .inner-grid {
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(4,1fr);
         grid-template-areas:
-        "c1 c2 c3 c4 c5";
+        "c1 c2 c3 c4";
         justify-content: start;
         align-items: start;
-        column-gap: 50px;
+        column-gap: 100px;
     }
 
     .col {
@@ -700,8 +685,8 @@ WIDE DESKTOP
     /*Desktop Footer*/
     footer {
         display: grid;
-        grid-template-columns: repeat(5,1fr);
-        column-gap: 50px;
+        grid-template-columns: repeat(4,1fr);
+        column-gap: 150px;
     }
 
     .footer-dark-light {

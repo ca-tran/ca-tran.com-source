@@ -27,7 +27,6 @@ function displaySectors() {
 }
 
 //FACES
-
 const faces = [
   "images/faces/face-1.svg",
   "images/faces/face-2.svg",
@@ -76,7 +75,7 @@ window.setInterval(() => {
 //     i = ++i % greets.length;
 // };
 
-//CURRENT WEATHER//
+//DISPLAY CURRENT WEATHER - OpenWeather
 const apiKey = "9f6562695ed85f8105bf1d55df422373"; // OpenWeatherMap API key
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent("Ho Chi Minh")}&units=metric&appid=${apiKey}`;
 
@@ -121,23 +120,22 @@ if (isNighttime) {
   }
 }
 
-//GREETS BASED ON TIME
-// const timeGreets = document.querySelector(".time-greets")
+// GREETS BASED ON TIME
+// const timeGreets = document.querySelector(".time-greets");
 // const isMorning = currentTime.getHours() >= 7 || currentTime.getHours() < 18;
 // const isEvening = currentTime.getHours() >= 18 || currentTime.getHours() < 21;
 // if (isMorning) {
 //   timeGreets.textContent = "G'day,";
-// } 
+// };
 // if (isAfternoon) {
 //   timeGreets.textContent = "Good afternoon,";
-// }
+// };
 // if (isEvening) {
 //   timeGreets.textContent = "Good evening,";
-// }
+// };
 // if (isMidnight) {
 //   timeGreets.textContent = "Good night,";
-// }
-
+// };
 
 //RANDOM IMG OVERLAY
 const images = [
