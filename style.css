@@ -671,7 +671,7 @@ WIDE DESKTOP
         "c1 c2 c3 c4";
         justify-content: start;
         align-items: start;
-        column-gap: 100px;
+        column-gap: 150px;
     }
 
     .col {

@@ -10,7 +10,7 @@ function refreshTime() {
 //EXPERTISE
 function displayExpertise() {
   const bioExpertise = document.querySelector("#bio-expertise");
-  bioExpertise.textContent = "art direction, print, motion, photography, front-end and generative art.";
+  bioExpertise.textContent = "art direction, print, motion, photography, front-end and glitch art.";
   bioExpertise.style.textDecoration = "none";
   bioExpertise.style.backgroundColor = "inherit";
   bioExpertise.style.color = "inherit";
