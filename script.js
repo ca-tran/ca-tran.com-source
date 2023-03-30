@@ -64,17 +64,6 @@ window.setInterval(() => {
 }, 2000);
 
 
-//CYCLE TEXT
-// var greets = $('div[id^="hello-"]').hide(),
-//     i = 0;
-
-// function cycle() { 
-//     greets.eq(i).fadeIn(500)
-//                 .delay(2000)
-//                 .fadeOut(500, cycle);
-//     i = ++i % greets.length;
-// };
-
 //DISPLAY CURRENT WEATHER - OpenWeather
 const apiKey = "9f6562695ed85f8105bf1d55df422373"; // OpenWeatherMap API key
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent("Ho Chi Minh")}&units=metric&appid=${apiKey}`;
