@@ -215,16 +215,16 @@ p, li {
     transition: opacity 1s ease-in-out;
 }
 
-/*WHITE ECHO*/
-.white-echo, .white-echo-exp, .white-echo-brands {
+/*GRADIENT BARS*/
+.gradident-bar, .gradident-bar-exp, .gradident-bar-brands {
     position: absolute;
     width: 5px;
     height: 1.1rem;
     background-image: linear-gradient(to left, var(--color-black-1c), transparent);
-    animation: white-echo 2s ease-in-out infinite;
+    animation: gradident-bar 2s ease-in-out infinite;
 }
 
-@keyframes white-echo {
+@keyframes gradident-bar {
     0% {width: 5px;}
     50% {width: 15px;}
     100% {width: 5px;}
@@ -328,7 +328,7 @@ marquee {
     max-width: 40vw;
     max-height: 40vh;
     object-fit: contain;
-    opacity: 60%;
+    opacity: 75%;
 }
 
 /*

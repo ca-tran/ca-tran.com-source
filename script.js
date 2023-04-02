@@ -184,7 +184,7 @@ window.onload = function() {
 //SEE MORE BRANDS
 const overseasBrands = document.querySelector("#overseas-brands");
 const seeMoreBrandsBtn = document.querySelector(".see-more-brands-btn");
-const seeMoreBrandsEcho = document.querySelector(".white-echo-brands")
+const seeMoreBrandsBar = document.querySelector(".gradident-bar-brands")
 
 function seeMoreBrands() {
   overseasBrands.style.visibility = "visible";
@@ -192,14 +192,14 @@ function seeMoreBrands() {
   overseasBrands.style.display = "inherit";
   seeMoreBrandsBtn.style.display= "none";
   seeMoreBrandsBtn.style.opacity = "0";
-  seeMoreBrandsEcho.style.dislay="none";
-  seeMoreBrandsEcho.style.opacity = "0";
+  seeMoreBrandsBar.style.dislay="none";
+  seeMoreBrandsBar.style.opacity = "0";
 }
 
 //SEE MORE EXP
 const moreExp = document.querySelector("#more-exp");
 const seeMoreExpBtn = document.querySelector(".see-more-exp-btn");
-const seeMoreExpEcho = document.querySelector(".white-echo-exp")
+const seeMoreExpBar = document.querySelector(".gradident-bar-exp")
 
 function seeMoreExp() {
   moreExp.style.visibility = "visible";
@@ -207,8 +207,8 @@ function seeMoreExp() {
   moreExp.style.display = "inherit";
   seeMoreExpBtn.style.display= "none";
   seeMoreExpBtn.style.opacity = "0";
-  seeMoreExpEcho.style.dislay="none";
-  seeMoreExpEcho.style.opacity = "0";
+  seeMoreExpBar.style.dislay="none";
+  seeMoreExpBar.style.opacity = "0";
 }
 
 //LIGHT DARK MODE MANUAL
