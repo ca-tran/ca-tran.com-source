@@ -5,7 +5,12 @@ function refreshTime() {
     timeZone: "Asia/Bangkok",
   });
   const formattedString = dateString.replace(", ", " - ");
-  timeDisplay.textContent = formattedString;
+  const timeArray = formattedString.split(":"); // Split the time string into an array
+
+  // Combine the hours and minutes into a new time string
+  const newTimeString = timeArray[0] + ":" + timeArray[1];
+  const lastAMPM = formattedString.substring(formattedString.length - 3);
+  timeDisplay.textContent = newTimeString + lastAMPM;
 }
 setInterval(refreshTime, 0);
 
