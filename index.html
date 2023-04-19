@@ -131,8 +131,16 @@
               >and more.</a
             >
           </p>
-          <div class="separator"></div>
-          <p>
+
+          <!-- MARQUEE V2 -->
+          <!-- <div class="marquee-container">
+            <div class="marquee-content">Your text goes here!</div>
+          </div> -->
+          <!-- <div class="separator"></div>-->
+
+          <!-- XP -->
+          <!--  
+            <p>
             Over 6 years of creative experience in
             <a
               id="multiple-sectors"
@@ -142,7 +150,7 @@
             >,
             <span class="bio-sectors"></span>
             including brands from Vietnam and overseas.
-          </p>
+          </p> -->
           <div class="separator"></div>
           <p>
             Currently living and working in
@@ -156,18 +164,42 @@
           </p>
           <div class="separator"></div>
           <h3>Creative Portfolio</h3>
-          <!-- REQUEST PORTFOLIO -->
-          <div class="gradident-bar"></div>
+          <!-- VIEW PORTFOLIO -->
+          <!-- <div class="gradident-bar"></div>
           <div class="folio-slide">
             <p>
               <a
                 class="view-portfolio"
                 href="mailto:hello@ca-tran.com?subject=Portfolio Request"
                 target="_blank"
+                >View Portfolio</a
+              >
+            </p>
+          </div> -->
+          <!-- REQUEST PORTFOLIO -->
+          <div class="request-portfolio-btn">
+            <p>
+              <a
+                class="request-portfolio"
+                href="mailto:hello@ca-tran.com?subject=Portfolio Request"
+                target="_blank"
                 >Request Portfolio</a
               >
             </p>
           </div>
+
+          <!-- KEEP SCROLLING -->
+          <p class="scroll-down-link">🠣</p>
+
+          <!-- 
+          <button type="request">
+            <a
+              class="request-portfolio"
+              href="mailto:hello@ca-tran.com?subject=Portfolio Request"
+              target="_blank"
+              >Request Portfolio</a
+            >
+          </button> -->
         </section>
         <section id="experience" class="col column-2">
           <h2>Experience</h2>
@@ -207,9 +239,9 @@
               >Campaign Brief Asia</a
             >
           </p>
-          <div class="separator"></div>
-          <div class="gradident-bar-exp"></div>
-          <div class="see-more-exp-btn" onclick="seeMoreExp()">
+          <!-- <div class="separator"></div> -->
+          <!-- <div class="gradident-bar-exp"></div> -->
+          <!-- <div class="see-more-exp-btn" onclick="seeMoreExp()">
             <p>
               <a>More Experience</a>
             </p>
@@ -221,9 +253,9 @@
               <li>Generative Art</li>
               <li>Glitch Art</li>
             </ul>
-          </div>
+          </div> -->
         </section>
-        <section id="career" class="col column-3">
+        <!-- <section id="career" class="col column-3">
           <h2>Career</h2>
           <div class="hr-line"></div>
           <h3>Vietnam</h3>
@@ -302,8 +334,8 @@
               >
             </p>
           </div>
-        </section>
-        <section id="contact" class="col column-4">
+        </section> -->
+        <section id="contact" class="col column-3">
           <h2>Contact</h2>
           <div class="hr-line"></div>
           <h3>Work together!</h3>
@@ -345,14 +377,85 @@
               </li>
             </ul>
           </div>
+          <!-- CONTACT FORM -->
+          <!-- <div class="separator"></div>
+          <form id="contact-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+          </form>-->
         </section>
-        <!-- <section id="spare column" class="col column-5"></section> -->
+        <!-- <section id="photography" class="col column-4">
+          <h2>Photography</h2>
+          <div class="hr-line"></div>
+          <p>
+            <a href="#" onmouseover="showImages()" onmouseout="hideImages()"
+              >Vietnam 2019</a
+            >
+          </p>
+        </section> -->
       </div>
     </main>
-    <!-- Overlay Artworks -->
-    <div class="overlay-container">
-      <img class="overlay-img" src="" />
+    <!-- OVERLAYS -->
+    <div class="main-overlay-container">
+      <!-- Overlay Artworks -->
+      <div class="overlay-container">
+        <img class="overlay-img" src="" />
+      </div>
+
+      <!-- Photography Gallery -->
+      <!-- <div class="gallery-container">
+          <div class="gallery-wrapper">
+            <div class="gallery-item">
+              <img src="images/photography/0037_17.jpg" alt="Photo" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/photography/0038_17A.jpg" alt="Photo" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/photography/0039_18.jpg" alt="Photo" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/photography/0040_18A.jpg" alt="Photo" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/photography/0041_19.jpg" alt="Photo" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/photography/0039_18.jpg" alt="Photo" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/photography/0040_18A.jpg" alt="Photo" />
+            </div>
+            <div class="gallery-item">
+              <img src="images/photography/0041_19.jpg" alt="Photo" />
+            </div>
+          </div>
+        </div> -->
+
+      <!-- Overlay Photos -->
+      <!-- <div id="hover-images"></div>
+      <img class="photo-overlay-img" src="" /> -->
+
+      <!-- <div class="overlay-photography-container">
+        <img class="overlay-photo" src="" />
+      </div> -->
     </div>
+
+    <!-- VERTICAL NAV -->
+    <!-- <div class="vertical-nav">
+      <a href="#" class="nav-item">Photography</a>
+      <a href="#" class="nav-item">Projects</a>
+      <a href="#" class="nav-item">Design</a>
+    </div> -->
+
     <footer>
       <div class="hr-line desktop-hidden"></div>
       <p>Ca Tran &copy <span id="current-year"></span></p>
@@ -360,14 +463,23 @@
         SGN —
         <span id="time"></span>
       </p>
-      <!-- Manual Light/Dark -->
-      <!-- <p class="footer-dark-light">
-        <a class="no-arrow-link dark-mode-button" onclick="darkMode()">Night</a
-        ><a class="no-arrow-link light-mode-button" onclick="lightMode()"
-          >Day</a
-        >
-      </p> -->
       <p id="weather-text"></p>
+      <!-- MANUAL LIGHT DARK MODE -->
+      <div class="manual-dark-mode-container">
+        <a
+          class="no-arrow-link dark-mode-item dark-mode-button"
+          onclick="darkMode2()"
+          >Dark</a
+        >
+        <!-- <img src="images/day-night/night.svg" alt="" /> -->
+
+        <a
+          class="no-arrow-link dark-mode-item light-mode-button"
+          onclick="lightMode2()"
+          >Light</a
+        >
+        <!-- <img src="images/day-night/day.svg" alt="" /> -->
+      </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="script.js"></script>
