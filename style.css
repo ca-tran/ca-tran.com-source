@@ -333,23 +333,20 @@ button {
 /* Set up the container */
 .vertical-nav {
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 0%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   /* transform: rotate(90deg); */
-  transform-origin: top right;
+  transform-origin: top left;
 }
 
 /* Style the links */
 .nav-item {
   display: block;
   padding: 10px;
-  /* border: 0.5px solid var(--color-bg-white); */
   text-decoration: none;
   writing-mode: vertical;
   text-orientation: mixed;
-  /* transform: rotate(-90deg); */
   margin-left: auto;
 }
 .nav-item:hover::after {
@@ -408,11 +405,13 @@ marquee {
 
 /* KEEP SCROLLING */
 .scroll-down-link {
+  /* display: flex; */
+  margin: 0;
   position: absolute;
   z-index: 3;
   cursor: none;
   height: 2rem;
-  left: 50%;
+  /* left: 48%; */
   bottom: 15px;
   font-size: 1.5rem;
   text-decoration: none;
@@ -421,14 +420,14 @@ marquee {
 
 @keyframes fade_move_down {
   0% {
-    transform: translate(0, -10px);
+    transform: translate(0, -20px);
     opacity: 0;
   }
   50% {
     opacity: 1;
   }
   100% {
-    transform: translate(0, 10px);
+    transform: translate(0, 0px);
     opacity: 0;
   }
 }
@@ -505,10 +504,18 @@ button[type="submit"]:hover {
 }
 
 /* OVERLAYS */
-.main-overlay-container {
+/* .overlay-grid {
   display: grid;
-  grid-template-columns: 2fr (2, 1);
+  grid-template-columns: reapeat(2, 1fr);
+  grid-template-areas: "overlay-c1 overlay-c2";
 }
+
+.overlay-column-1 {
+  grid-area: overlay-c1;
+}
+.overlay-column-2 {
+  grid-area: overlay-c2;
+} */
 
 /*=========== IMG OVERLAY ===========*/
 .overlay-container {
@@ -530,37 +537,6 @@ button[type="submit"]:hover {
   max-height: 40vh;
   object-fit: contain;
   opacity: 75%;
-}
-
-/* HORIZONTAL GALLERY */
-.gallery-container {
-  display: grid;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-}
-
-.gallery-wrapper {
-  display: grid;
-  grid-auto-flow: auto;
-  gap: 1rem;
-}
-
-.gallery-item {
-  margin-right: 20px;
-  width: 350px;
-  height: 100%;
-}
-
-.gallery-item img {
-  width: 100%;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.gallery-item:hover img {
-  filter: grayscale(0%);
 }
 
 /*
