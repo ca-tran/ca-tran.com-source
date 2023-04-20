@@ -236,6 +236,10 @@ button {
   z-index: 2;
 }
 
+.light-mode-button {
+  display: none;
+}
+
 /*=========== PORTFOLIO SLIDE-IN-OUT ===========*/
 .folio-slide {
   position: absolute;
