@@ -55,6 +55,7 @@ h3 {
 }
 
 .light-mode-button {
+  display: inherit;
   border-color: var(--color-bg-white);
 }
 
