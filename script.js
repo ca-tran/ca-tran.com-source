@@ -195,7 +195,7 @@ const images = [
   "images/overlay-images/artwork/Planet8.png",
   "images/overlay-images/artwork/Planet9.png",
   "images/overlay-images/artwork/Rampage.gif",
-  "images/overlay-images/artwork/Redemption.gif",
+  // "images/overlay-images/artwork/Redemption.gif",
   "images/overlay-images/artwork/screenprint1.jpg",
   "images/overlay-images/artwork/screenprint2.jpg",
   "images/overlay-images/artwork/screenprint4.jpg",
