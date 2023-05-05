@@ -306,7 +306,7 @@ button {
 }
 
 /* CYCLE TEXT ANIMATION */
-.cycle-text p {
+/* .cycle-text p {
   opacity: 0;
   top: 0;
   left: 0;
@@ -331,7 +331,7 @@ button {
     opacity: 0;
     transform: translateY(5px);
   }
-}
+} */
 
 /* VERTICAL NAV */
 /* Set up the container */
@@ -892,11 +892,11 @@ WIDE DESKTOP
   .inner-grid {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "c1 c2 c3 c4";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "c1 c2 c3 c4 c5";
     justify-content: start;
     align-items: start;
-    column-gap: 150px;
+    column-gap: 100px;
   }
 
   .col {
@@ -910,8 +910,8 @@ WIDE DESKTOP
   /*Desktop Footer*/
   footer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 150px;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 100px;
   }
 
   .footer-time {
