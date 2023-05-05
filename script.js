@@ -17,8 +17,7 @@ setInterval(refreshTime, 0);
 //EXPERTISE
 function displayExpertise() {
   const bioExpertise = document.querySelector("#bio-expertise");
-  bioExpertise.textContent =
-    "art direction, print, motion, photography & glitch art.";
+  bioExpertise.textContent = "art direction, print, motion & photography.";
   bioExpertise.style.textDecoration = "none";
   bioExpertise.style.backgroundColor = "inherit";
   bioExpertise.style.color = "inherit";
