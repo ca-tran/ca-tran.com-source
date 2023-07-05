@@ -45,16 +45,27 @@ h3 {
   color: #9e9e9e;
 }
 
+button {
+  background-color: var(--color-black);
+  color: var(--color-bg-white);
+  border: 1px solid var(--color-bg-white);
+}
+
+button:hover {
+  background-color: var(--color-bg-white);
+  color: var(--color-black);
+}
+
 .request-portfolio {
   border-color: var(--color-bg-white);
 }
 
 /* DARK MODE BUTTON */
-.dark-mode-button {
+button[type="dark-mode"] {
   display: none;
 }
 
-.light-mode-button {
+button[type="light-mode"] {
   display: inherit;
   border-color: var(--color-bg-white);
 }
@@ -63,22 +74,21 @@ h3 {
   filter: invert(1);
 }
 
+/* DARK/LIGHT MODE ICON */
+.dark-mode-icon {
+}
+
 /* FACES */
 .faces-container img {
   filter: invert(1);
 }
 
-.gradident-bar,
-.gradident-bar-exp,
-.gradident-bar-brands {
-  filter: invert(1);
+.marquee-txt-overlay-light {
+  display: none;
 }
-.marquee-txt-overlay {
-  background-image: linear-gradient(
-    to left,
-    transparent,
-    var(--color-black-dark-mode)
-  );
+
+.marquee-txt-overlay-dark {
+  opacity: 1;
 }
 
 /* SEPARATOR LINES */
@@ -90,4 +100,19 @@ h3 {
 a:hover {
   background-color: var(--color-bg-white);
   color: var(--color-black);
+}
+
+/* TRANSITIONS TO DARK MODE */
+body,
+.bio-logo,
+h3,
+.hr-line,
+.marquee-txt-overlay-dark,
+.faces-container img,
+.bg-img {
+  transition: var(--transition-dark-mode) var(--transition-ease);
+}
+
+button {
+  transition: var(--transition-dark-mode) var(--transition-ease);
 }

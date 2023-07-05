@@ -51,6 +51,8 @@ SHARED CSS
   --color-black-1c: #1c1c1c;
   --color-black: rgb(15, 15, 15);
   --color-black-dark-mode: #0d0d0d;
+  --transition-dark-mode: 300ms;
+  --transition-ease: ease-in-out;
 }
 
 html {
@@ -117,6 +119,21 @@ li {
   margin-bottom: 5px;
 }
 
+/* MAIN MENU */
+.main-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.main-menu button {
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+}
+
 /*Separators*/
 .hr-line {
   width: 100%;
@@ -169,26 +186,28 @@ li {
 #greetings {
   user-select: none;
 }
-/* REQUEST PORTFOLIO BTN */
-.request-portfolio-btn {
-  margin-top: 10px;
-}
-.request-portfolio {
-  border: 1px solid var(--color-black-1c);
-  padding: 5px 8px;
-  background: none;
-  text-decoration: none;
-}
 
 button {
   background: transparent;
-  color: inherit;
   font-family: inherit;
   font-size: inherit;
 }
 
-.request-portfolio:hover::after {
-  content: "";
+button {
+  background-color: var(--color-black);
+  color: var(--color-black-1c);
+  cursor: pointer;
+  border: 1px solid var(--color-black-1c);
+  padding: 5px 8px;
+  /* margin-top: 2px; */
+  background: var(--color-bg-white);
+  text-decoration: none;
+}
+
+button:hover {
+  color: var(--color-bg-white);
+  cursor: pointer;
+  background: var(--color-black-1c);
 }
 
 /* HOVER ON LINK TO SHOW IMAGES */
@@ -223,8 +242,8 @@ button {
   right: 2rem;
 }
 
-.dark-mode-button,
-.light-mode-button {
+button[type="dark-mode"],
+button[type="light-mode"] {
   text-decoration: none;
   cursor: pointer;
   text-align: center;
@@ -236,7 +255,7 @@ button {
   z-index: 2;
 }
 
-.light-mode-button {
+button[type="light-mode"] {
   display: none;
 }
 
@@ -371,6 +390,20 @@ button {
   z-index: 1;
 }
 
+.marquee-txt-overlay-dark {
+  position: absolute;
+  margin-top: 20px;
+  width: 75px;
+  height: 1.5rem;
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    var(--color-black-dark-mode)
+  );
+  opacity: 0;
+  z-index: 1;
+}
+
 marquee {
   margin-top: 1.1rem;
   margin-bottom: 1.1rem;
@@ -462,22 +495,29 @@ label,
 input,
 textarea {
   font-family: apercu_monoregular;
-  margin-bottom: 3px;
 }
 
 label {
-  color: var(--color-dark-gray);
+  color: var(--color-black-1c);
+  font-family: "avant-garde";
+  font-size: 1rem;
 }
 
 input,
 textarea {
+  width: 230px;
   color: var(--color-black-1c);
   font-family: "avant-garde";
-  font-size: 0.9rem;
-  padding: 5px;
-  border: 1px solid var(--color-dark-gray);
-  background: var(--color-dark-gray);
-  margin-bottom: 10px;
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-top: 1px solid var(--color-black-1c);
+  border-left: 1px solid var(--color-black-1c);
+  border-right: 1px solid var(--color-black-1c);
+  border-bottom: 1px solid var(--color-black-1c);
+  background: var(--color-bg-white);
   resize: vertical;
 }
 
@@ -487,24 +527,23 @@ textarea:focus {
 }
 
 button[type="submit"] {
-  margin-top: -10px;
-  width: 100%;
-  background-color: transparent;
-  color: var(--color-bg-white);
-  padding: 5px 10px;
-  border: 1px solid var(--color-bg-white);
-  cursor: pointer;
-}
-
-button[type="submit"]:hover {
-  color: var(--color-black-1c);
-  background-color: var(--color-bg-white);
+  width: 230px;
 }
 
 /*=========== CURRENT WEATHER ===========*/
 #weather-text {
   grid-column-start: 3;
   grid-column-end: 4;
+}
+
+/*=========== CRAFTED EMOJI ===========*/
+#crafted-emoji {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.crafted-emoji {
+  padding: 2px 3px 1px 3px;
 }
 
 /* OVERLAYS */
@@ -541,6 +580,21 @@ button[type="submit"]:hover {
   max-height: 40vh;
   object-fit: contain;
   opacity: 75%;
+}
+
+/*=========== TRANSITIONS TO LIGHT MODE ===========*/
+body,
+.bio-logo,
+h3,
+.hr-line,
+.marquee-txt-overlay-dark,
+.faces-container img,
+.bg-img {
+  transition: var(--transition-dark-mode) var(--transition-ease);
+}
+
+button {
+  transition: var(--transition-dark-mode) var(--transition-ease);
 }
 
 /*
@@ -781,6 +835,34 @@ TABLET - SMALL DESKTOP
     background-size: cover;
     background-attachment: fixed;
   }
+
+  /* Background Animated SVG */
+  .bg-svg-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    z-index: -2;
+    opacity: 100%;
+  }
+
+  .bg-svg-path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 5s linear alternate infinite;
+  }
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
   .scroll-down-link {
     display: none;
   }
