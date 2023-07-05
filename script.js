@@ -99,7 +99,7 @@ fetch(apiUrl)
     const city = data.name;
     const country = data.sys.country;
 
-    const weatherText = `${temperature}°C — ${weatherDescription}`;
+    const weatherText = `${temperature}°C – ${weatherDescription}`;
 
     const weatherElement = document.getElementById("weather-text");
     weatherElement.textContent = weatherText; // Set the text content of the HTML element with ID "weather-text" to the weather text
@@ -133,9 +133,9 @@ if (isNighttime) {
 }
 
 // DARK LIGHT MANUAL MODE V2
-const darkModeBtn = document.querySelector(".dark-mode-button");
-const lightModeBtn = document.querySelector(".light-mode-button");
-
+const darkModeBtn = document.querySelector("button[type='dark-mode']");
+const lightModeBtn = document.querySelector("button[type='light-mode']");
+// Light mode
 function lightMode2() {
   const links = document.head.getElementsByTagName("link");
   for (let i = 0; i < links.length; i++) {
@@ -149,7 +149,7 @@ function lightMode2() {
   lightModeBtn.style.display = "none";
   darkModeBtn.style.dislay = "inherit";
 }
-
+// Dark mode
 function darkMode2() {
   const link = document.createElement("link");
   link.rel = "stylesheet";
@@ -162,23 +162,6 @@ function darkMode2() {
   darkModeBtn.style.dislay = "none";
   lightModeBtn.style.display = "inherit";
 }
-
-// GREETS BASED ON TIME
-// const timeGreets = document.querySelector(".time-greets");
-// const isMorning = currentTime.getHours() >= 7 || currentTime.getHours() < 18;
-// const isEvening = currentTime.getHours() >= 18 || currentTime.getHours() < 21;
-// if (isMorning) {
-//   timeGreets.textContent = "G'day,";
-// };
-// if (isAfternoon) {
-//   timeGreets.textContent = "G'afternoon,";
-// };
-// if (isEvening) {
-//   timeGreets.textContent = "G'evening,";
-// };
-// if (isMidnight) {
-//   timeGreets.textContent = "G'night,";
-// };
 
 //RANDOM IMG OVERLAY
 const images = [
@@ -340,6 +323,107 @@ function animateMarquee() {
 
 // Start the animation
 animateMarquee();
+
+// Random Emojis
+// Predefined array of emojis
+const emojis = ["💙", "💚", "💛", "💜", "🍔", "🍟", "🍸", "🌮", "🍱"];
+let shuffledEmojis = [];
+
+// Function to shuffle emojis array
+function shuffleArray(array) {
+  let currentIndex = array.length,
+    randomIndex;
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
+
+// Function to display a new random emoji
+function displayRandomEmoji() {
+  if (shuffledEmojis.length === 0) {
+    // All emojis have been displayed, reshuffle the array
+    shuffledEmojis = shuffleArray([...emojis]);
+  }
+
+  const emojiContainer = document.getElementByClass("crafted-emoji");
+  const currentEmoji = shuffledEmojis.pop();
+
+  emojiContainer.textContent = currentEmoji;
+}
+
+// Initial display of a random emoji
+displayRandomEmoji();
+
+// Event listener for clicking the emoji
+document
+  .getElementByClass("crafted-emoji")
+  .addEventListener("click", displayRandomEmoji);
+
+// SVG TRACE PATH
+// var paths = document.querySelectorAll("svg.bg-svg-animated paths"),
+//   i = 0;
+
+// paths.forEach(function (item, index) {
+//   i++;
+//   var pathLength = item.getTotalLength();
+//   item.setAttribute("stroke-dasharray", pathLength);
+//   item.setAttribute("stroke-dashoffset", pathLength);
+//   if ((index = 0)) {
+//     item.innerHTML =
+//       "<animate id='a + i + ''attributeName='stroke-dashoffset-' begin='0s' dur='3s' to='0' fill='freeze'/>";
+//   } else {
+//     item.innerHTML =
+//       "<animate id='a + i + ''attributeName='stroke-dashoffset-' begin='a " +
+//       i +
+//       ".end' dur='3s' to='0' fill='freeze'/>";
+//   }
+
+//   console.log(index, pathLength);
+// });
+
+// SVG TRACE PATH V2.0
+// const paths = document.querySelectorAll(".my-path");
+
+// // Animate the tracing of each path
+// function tracePaths() {
+//   paths.forEach((path) => {
+//     const length = path.getTotalLength();
+//     path.style.strokeDasharray = length;
+//     path.style.strokeDashoffset = length;
+
+//     path.style.transition = "stroke-dashoffset 5s ease-in-out";
+//     path.style.strokeDashoffset = "0";
+//   });
+// }
+
+// // Call the tracePaths function when the page loads
+// window.onload = tracePaths;
+
+// GREETS BASED ON TIME
+// const timeGreets = document.querySelector(".time-greets");
+// const isMorning = currentTime.getHours() >= 7 || currentTime.getHours() < 18;
+// const isEvening = currentTime.getHours() >= 18 || currentTime.getHours() < 21;
+// if (isMorning) {
+//   timeGreets.textContent = "G'day,";
+// };
+// if (isAfternoon) {
+//   timeGreets.textContent = "G'afternoon,";
+// };
+// if (isEvening) {
+//   timeGreets.textContent = "G'evening,";
+// };
+// if (isMidnight) {
+//   timeGreets.textContent = "G'night,";
+// };
 
 //GALLERY
 
