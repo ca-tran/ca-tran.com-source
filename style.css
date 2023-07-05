@@ -324,34 +324,6 @@ button[type="light-mode"] {
   }
 }
 
-/* CYCLE TEXT ANIMATION */
-/* .cycle-text p {
-  opacity: 0;
-  top: 0;
-  left: 0;
-  animation: cycle 2s ease-in-out infinite;
-  animation-delay: 0s;
-}
-
-@keyframes cycle {
-  0% {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  25% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  75% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-} */
-
 /* VERTICAL NAV */
 /* Set up the container */
 .vertical-nav {
