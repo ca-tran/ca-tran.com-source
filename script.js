@@ -249,7 +249,6 @@ function seeMoreExp() {
 // OVERLAY IMGS
 // Array of image URLs
 const photoImages = [
-  "images/photos/000004_June_Lomo 100.jpg",
   "images/photos/000053_June_Lomo 100.jpg",
   "images/photos/000057_June_Lomo 100.jpg",
   "images/photos/000059_June_Lomo 100.jpg",
@@ -259,8 +258,6 @@ const photoImages = [
   "images/photos/000042010020.jpg",
   "images/photos/0031_14.jpg",
   "images/photos/0034_15A.jpg",
-  "images/photos/ScanImage140982.jpg",
-  "images/photos/ScanImage140995.jpg",
 ];
 
 let currentPhotoIndex = -1;
