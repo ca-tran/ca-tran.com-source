@@ -368,6 +368,102 @@ document
   .getElementByClass("crafted-emoji")
   .addEventListener("click", displayRandomEmoji);
 
+// COLORIZE
+
+function colorize1() {
+  document.documentElement.style.setProperty("--color-black", "#043504");
+  document.documentElement.style.setProperty("--color-black-1c", "#043504");
+  document.documentElement.style.setProperty("--color-white", "#f1c93b");
+  document.documentElement.style.setProperty("--color-dark-gray", "#043504");
+  document.documentElement.style.setProperty("--color-black-dark", "#043504");
+}
+
+function colorize2() {
+  document.documentElement.style.setProperty("--color-black", "#703100");
+  document.documentElement.style.setProperty("--color-black-1c", "#703100");
+  document.documentElement.style.setProperty("--color-white", "#eeeeee");
+  document.documentElement.style.setProperty("--color-dark-gray", "#703100");
+  document.documentElement.style.setProperty("--color-black-dark", "#703100");
+}
+
+// const biosBtn = document.getElementsByClassName(".bios-btn");
+// biosBtn.onclick = function colorizeBios() {
+
+const biosBtn = document.getElementsByClassName(".bios-btn");
+var biosOn = false;
+
+function biosToggle() {
+  if (biosOn) {
+    colorizeReset();
+  } else {
+    colorizeBios();
+  }
+}
+function colorizeBios() {
+  document.documentElement.style.setProperty("--color-black", "#0000aa");
+  document.documentElement.style.setProperty("--color-black-1c", "#0000aa");
+  document.documentElement.style.setProperty("--color-white", "#eeeeee");
+  // document.documentElement.style.setProperty("--color-dark-gray", "#0000aa");
+  document.documentElement.style.setProperty("--color-black-dark", "#0000aa");
+  biosBtn.classList.add("bios-active");
+  biosOn = true;
+}
+
+function colorizeReset() {
+  document.documentElement.style.setProperty(
+    "--color-black",
+    "rgb(15, 15, 15)"
+  );
+  document.documentElement.style.setProperty("--color-black-1c", "#1c1c1c");
+  document.documentElement.style.setProperty("--color-white", "#f2f2f2");
+  document.documentElement.style.setProperty("--color-dark-gray", "#939393");
+  document.documentElement.style.setProperty("--color-black-dark", "#0d0d0d");
+  biosBtn.classList.remove("bios-active");
+  biosOn = false;
+}
+
+// MORE BUTTONS
+
+function moreButtons() {
+  const moreBtn = document.querySelector(".more-btn");
+  const lessBtn = document.querySelector(".less-btn");
+
+  const biosBtn = document.querySelector(".bios-btn");
+  const resetBtn = document.querySelector(".reset-btn");
+  const artworkBtn = document.querySelector(".artwork-btn");
+  const photosBtn = document.querySelector(".photos-btn");
+  moreBtn.style.display = "none";
+
+  // biosBtn.style.display = "inherit";
+  // resetBtn.style.display = "inherit";
+  // artworkBtn.style.display = "inherit";
+  // photosBtn.style.display = "inherit";
+
+  biosBtn.style.visibility = "inherit";
+  resetBtn.style.visibility = "inherit";
+  artworkBtn.style.visibility = "inherit";
+  photosBtn.style.visibility = "inherit";
+
+  // biosBtn.style.opacity = "1";
+  // resetBtn.style.opacity = "1";
+  // artworkBtn.style.opacity = "1";
+  // photosBtn.style.opacity = "1";
+  // lessBtn.style.opacity = "1";
+
+  lessBtn.style.visibility = "inherit";
+}
+
+function lessButtons() {
+  moreBtn.style.display = "inherit";
+
+  biosBtn.style.display = "none";
+  resetBtn.style.display = "none";
+  artworkBtn.style.display = "none";
+  photosBtn.style.display = "none";
+
+  lessBtn.style.display = "none";
+}
+
 // SVG TRACE PATH
 // var paths = document.querySelectorAll("svg.bg-svg-animated paths"),
 //   i = 0;

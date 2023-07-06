@@ -1,7 +1,7 @@
 /*==== DARK MODE ====*/
 /* SPLASH BG */
 .splash {
-  background-color: var(--color-black-dark-mode);
+  background-color: var(--color-black-dark);
 }
 
 /* LOGOS */
@@ -15,8 +15,8 @@
 
 /* BODY BG & PATTERN */
 body {
-  background-color: var(--color-black-dark-mode);
-  color: var(--color-bg-white);
+  background-color: var(--color-black-dark);
+  color: var(--color-white);
 }
 
 .bg-img {
@@ -47,17 +47,17 @@ h3 {
 
 button {
   background-color: var(--color-black);
-  color: var(--color-bg-white);
-  border: 1px solid var(--color-bg-white);
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
 }
 
 button:hover {
-  background-color: var(--color-bg-white);
+  background-color: var(--color-white);
   color: var(--color-black);
 }
 
 .request-portfolio {
-  border-color: var(--color-bg-white);
+  border-color: var(--color-white);
 }
 
 /* DARK MODE BUTTON */
@@ -67,7 +67,7 @@ button[type="dark-mode"] {
 
 button[type="light-mode"] {
   display: inherit;
-  border-color: var(--color-bg-white);
+  border-color: var(--color-white);
 }
 
 .manual-dark-mode-container img {
@@ -75,8 +75,8 @@ button[type="light-mode"] {
 }
 
 /* DARK/LIGHT MODE ICON */
-.dark-mode-icon {
-}
+/* .dark-mode-icon {
+} */
 
 /* FACES */
 .faces-container img {
@@ -93,12 +93,12 @@ button[type="light-mode"] {
 
 /* SEPARATOR LINES */
 .hr-line {
-  border-bottom: 1px solid var(--color-bg-white);
+  border-bottom: 1px solid var(--color-white);
 }
 
 /* HOVER LINKS */
 a:hover {
-  background-color: var(--color-bg-white);
+  background-color: var(--color-white);
   color: var(--color-black);
 }
 

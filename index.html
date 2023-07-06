@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Meta tags for social media sharing -->
+
+    <!-- Meta tags -->
     <meta
       name="description"
       content="Ca Tran — Multidisciplinary Designer who creates brand identities and visual solutions, currently based in Saigon, Vietnam."
     />
+
+    <!-- OpenGraph Meta Tags -->
     <meta property="og:title" content="Ca Tran — Multidisciplinary Designer" />
+    <meta name="og:site_name" content="Ca Tran Design">
     <meta
       property="og:description"
       content="Ca Tran — Multidisciplinary Designer who creates brand identities and visual solutions, currently based in Saigon, Vietnam."
@@ -17,9 +21,17 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ca-tran.com" />
     <meta
-      property="og:image"
-      content="images/og-image/catran-og-image-v2.png"
+    property="og:image"
+    content="https://ca-tran.com/images/og-image/catran-og-image-v3.png"
     />
+    <meta name="og:email" content="hello@ca-tran.com">
+
+    <!-- Author & Designer -->
+    <meta name="author" content="Ca Tran, hello@ca-tran.com">
+    <meta name="designer" content="Ca Tran">
+
+    <!-- Keywords -->
+    <meta name="keywords" content="ca tran, ca-tran, ca tran design, ca-tran design, digital designer, graphic designer, web designer, art director, freelance designer, ho chi minh city, saigon, vietnam">
     <!-- Page title and canonical link -->
     <title>Ca Tran — Multidisciplinary Designer</title>
     <link rel="canonical" href="https://ca-tran.com/" />
@@ -61,28 +73,7 @@
         class="splash-logo"
       />
     </div>
-
-    <!-- MAIN MENU -->
-    <!-- <div class="main-menu">
-      <button  onclick="location.href='design.html'">
-        Design
-      </button>
-      <button onclick="location.href='photography.html'">
-        Photography
-      </button>
-      <p>
-        <a href="design.html" onclick="">design</a>/<a href="photography.html" onclick="">photography</a>
-      </p>
-    </div> -->
-
     <header>
-      <!-- VERTICAL NAV -->
-      <!-- <div class="vertical-nav">
-        <a href="#" class="nav-item">Photography</a>
-        <a href="#" class="nav-item">Projects</a>
-        <a href="#" class="nav-item">Journal</a>
-        <a href="#" class="nav-item">Artwork</a>
-      </div> -->
     </header>
     <main class="outer-grid">
       <div class="inner-grid">
@@ -236,7 +227,6 @@
               >Campaign Brief Asia</a
             >
           </p>
-
         </section>
         <section id="contact" class="col column-3">
           <h2>Contact</h2>
@@ -259,6 +249,11 @@
                   >Linkedin</a
                 >
               </li>
+              <li>
+                <a href="https://open.spotify.com/user/darkex64" target="_blank"
+                  >Spotify</a
+                >
+              </li>
             </ul>
             <div class="separator"></div>
             <h3>Photos</h3>
@@ -270,10 +265,13 @@
               </li>
             </ul>
           </div>
+          <!-- EMOJI -->
+      <!-- <p id="crafted-emoji"><a class="crafted-emoji no-arrow-link">🔥</a></p>
+      <div id="emojis"></div> -->
         </section>
-        <section id="projects" class="col column-4">
-          <!-- CONTACT FORM -->
-          <!-- <form id="contact-form">
+        <!--<section id="projects" class="col column-4">
+
+           <form id="contact-form">
             <label for="name"></label>
             <input
               type="text"
@@ -302,9 +300,10 @@
 
             <button type="submit">Submit</button>
           </form>
-        </section> -->
-        <!-- <section id="projects" class="col column-4">
-          <h2>Selected Projects</h2>
+        </section>
+     
+        <section id="projects" class="col column-4">
+          <h2>Projects</h2>
           <div class="hr-line"></div>
           <p>
             <a href="#">Project 1</a>
@@ -319,7 +318,6 @@
             >
           </p>
         </section> -->
-      </div>
     </main>
     <!-- OVERLAYS -->
     <div class="overlay-grid">
@@ -327,14 +325,9 @@
       <div class="overlay-container overlay-column-1">
         <img class="overlay-img" src="" />
       </div>
-
       <!-- Overlay Photos -->
       <!-- <div id="hover-images"></div>
       <img class="photo-overlay-img" src="" /> -->
-
-      <!-- <div class="photo-overlay-container overlay-column-2">
-        <img class="overlay-photo" src="images/photography/0037_17.jpg" />
-      </div> -->
     </div>
     <footer>
       <div class="hr-line desktop-hidden"></div>
@@ -344,18 +337,20 @@
         <span id="time"></span>
       </p>
       <p id="weather-text"></p>
-      <!-- CRAFTED WITH EMOJI -->
-      <!-- <p id="crafted-emoji">Crafted with <a class="crafted-emoji no-arrow-link">❤</a></p>
-      <div id="emojis"></div> -->
-      
-      <!-- MANUAL LIGHT DARK MODE -->
-      <div class="manual-dark-mode-container">
-        <svg id="dark-mode-icon" class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="50" fill="black"></circle></svg>
-
-        <button name="Dark mode" type="dark-mode" onclick="darkMode2()">Dark</button>
-        <button name="Light mode" type="light-mode" onclick="lightMode2()">Light</button>
-
+      <div class="corner-nav-container">
+        <!-- DARK LIGHT MODE -->
+        <button name="Dark mode" type="dark-mode" class="mobile-hidden" onclick="darkMode2()">Dark</button>
+        <button name="Light mode" type="light-mode" class="mobile-hidden" onclick="lightMode2()">Light</button>
+        <!-- <button name="More" type="more" class="more-btn" onclick="moreButtons()">More</button> -->
+        <!-- <button name="Less" type="less" class="less-btn" onclick="lessButtons()">Less</button> -->
+        <!-- COLORIZE -->
+        <!-- <button name="Color 1" type="colorize1" onclick="colorize1()">C1</button> -->
+        <!-- <button name="Color 2" type="colorize2" onclick="colorize2()">C2</button> -->
+        <!-- <button name="BIOS color" type="colorizeBIOS" class="bios-btn" onclick="biosToggle()">BIOS</button> -->
+        <!-- <button name="Reset color" type="colorizeReset" class="reset-btn" onclick="colorizeReset()">Reset</button> -->
+        <!-- PHOTO / ART -->
+        <!-- <button name="Show art" type="show-artwork" class="artwork-btn">Artwork</button> -->
+        <!-- <button name="Show photos" type="show-photos" class="photos-btn">Photos</button> -->
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
