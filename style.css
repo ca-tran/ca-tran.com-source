@@ -45,14 +45,32 @@ SHARED CSS
 }
 
 :root {
-  --color-bg-white: #f2f2f2;
-  --color-dark-gray: #939393;
+  --color-white: #f2f2f2;
   --color-gray: #d1d1d1;
+  --color-dark-gray: #939393;
   --color-black-1c: #1c1c1c;
   --color-black: rgb(15, 15, 15);
-  --color-black-dark-mode: #0d0d0d;
+  --color-black-dark: #0d0d0d;
+
+  --color-link-hover: ;
+
   --transition-dark-mode: 300ms;
   --transition-ease: ease-in-out;
+
+  --size-1: 1rem;
+  --size-2: 0.8rem;
+
+  --color-1: #043504;
+  --color-2: #f1c93b;
+  --color-3: #fff0bb;
+
+  --color-4: #068fff;
+  --color-5: #eeeeee;
+  --color-7: #f86f03;
+
+  --color-8: #0000aa;
+  --color-9: #f0f259;
+  --color-10: #a90100;
 }
 
 html {
@@ -61,7 +79,7 @@ html {
 }
 
 body {
-  background-color: var(--color-bg-white);
+  background-color: var(--color-white);
   color: var(--color-black-1c);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
@@ -100,7 +118,7 @@ a {
 
 a:hover {
   background-color: var(--color-black);
-  color: var(--color-bg-white);
+  color: var(--color-white);
   transition-duration: 400ms;
   cursor: pointer;
 }
@@ -200,12 +218,12 @@ button {
   border: 1px solid var(--color-black-1c);
   padding: 5px 8px;
   /* margin-top: 2px; */
-  background: var(--color-bg-white);
+  background: var(--color-white);
   text-decoration: none;
 }
 
 button:hover {
-  color: var(--color-bg-white);
+  color: var(--color-white);
   cursor: pointer;
   background: var(--color-black-1c);
 }
@@ -233,50 +251,71 @@ button:hover {
   opacity: 75%;
 }
 
-/*==== LIGHT/DARK MODE BUTTONS ====*/
-.manual-dark-mode-container {
+/*======== CORNER NAV ========*/
+.corner-nav-container {
+  font-size: 0.8rem;
   position: fixed;
-  display: flex;
-  flex-direction: row;
-  top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1);
+  grid-template-rows: repeat(3, 1);
+  grid-template-areas:
+    "modes more"
+    "bios reset"
+    "art photo";
+  top: 1rem;
   right: 2rem;
+  z-index: 2;
 }
 
-button[type="dark-mode"],
-button[type="light-mode"] {
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  width: min-content;
-  height: min-content;
-  font-size: 0.8rem;
-  padding: 5px 10px;
-  border: 1px solid var(--color-black-1c);
-  z-index: 2;
+.bios-active {
+  background-color: red;
 }
 
 button[type="light-mode"] {
   display: none;
 }
 
-/*=========== PORTFOLIO SLIDE-IN-OUT ===========*/
-.folio-slide {
-  position: absolute;
-  display: inline-block;
-  transform: translateX(10px);
-  animation: folio-slide 2s ease-in-out infinite;
+button[type="more"] {
+  display: none;
 }
 
-@keyframes folio-slide {
-  0% {
-    transform: translateX(10px);
-  }
-  50% {
-    transform: translateX(20px);
-  }
-  100% {
-    transform: translateX(10px);
-  }
+button[type="less"],
+button[type="show-artwork"],
+button[type="show-photos"],
+button[type="colorizeReset"] {
+  display: none;
+  /* visibility: hidden; */
+}
+
+/* CORNER NAV GRID */
+.corner-nav-container button {
+  margin: 3px;
+}
+
+button[type="show-artwork"] {
+  grid-area: art;
+}
+button[type="colorize1"] {
+  grid-area: c1;
+}
+button[type="more"] {
+  grid-area: more;
+}
+
+button[type="colorizeBIOS"] {
+  grid-area: bios;
+}
+
+button[type="show-photos"] {
+  grid-area: photo;
+}
+
+button[type="colorizeReset"] {
+  grid-area: reset;
+}
+
+#dark-light-mode {
+  grid-area: modes;
 }
 
 /* SEE MORE EXP & BRANDS */
@@ -297,68 +336,13 @@ button[type="light-mode"] {
   transition: opacity 1s ease-in-out;
 }
 
-/*GRADIENT BARS*/
-.gradident-bar,
-.gradident-bar-exp,
-.gradident-bar-brands {
-  position: absolute;
-  width: 5px;
-  height: 1.1rem;
-  background-image: linear-gradient(
-    to left,
-    var(--color-black-1c),
-    transparent
-  );
-  animation: gradident-bar 2s ease-in-out infinite;
-}
-
-@keyframes gradident-bar {
-  0% {
-    width: 5px;
-  }
-  50% {
-    width: 15px;
-  }
-  100% {
-    width: 5px;
-  }
-}
-
-/* VERTICAL NAV */
-/* Set up the container */
-.vertical-nav {
-  position: fixed;
-  top: 0%;
-  display: flex;
-  flex-direction: row;
-  /* transform: rotate(90deg); */
-  transform-origin: top left;
-}
-
-/* Style the links */
-.nav-item {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  writing-mode: vertical;
-  text-orientation: mixed;
-  margin-left: auto;
-}
-.nav-item:hover::after {
-  content: "";
-}
-
 /*=========== MARQUEE ===========*/
 .marquee-txt-overlay {
   position: absolute;
   margin-top: 20px;
   width: 75px;
   height: 1.5rem;
-  background-image: linear-gradient(
-    to left,
-    transparent,
-    var(--color-bg-white)
-  );
+  background-image: linear-gradient(to left, transparent, var(--color-white));
   z-index: 1;
 }
 
@@ -370,7 +354,7 @@ button[type="light-mode"] {
   background-image: linear-gradient(
     to left,
     transparent,
-    var(--color-black-dark-mode)
+    var(--color-black-dark)
   );
   opacity: 0;
   z-index: 1;
@@ -384,7 +368,7 @@ marquee {
 /*=========== MARQUEE V2 ===========*/
 /* Set up the container */
 .marquee-container {
-  color: var(--color-bg-white);
+  color: var(--color-white);
   position: relative;
   overflow: hidden;
 }
@@ -451,7 +435,7 @@ marquee {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: var(--color-bg-white);
+  background-color: var(--color-white);
   z-index: 1;
 }
 
@@ -489,7 +473,7 @@ textarea {
   border-left: 1px solid var(--color-black-1c);
   border-right: 1px solid var(--color-black-1c);
   border-bottom: 1px solid var(--color-black-1c);
-  background: var(--color-bg-white);
+  background: var(--color-white);
   resize: vertical;
 }
 
@@ -517,6 +501,8 @@ button[type="submit"] {
 .crafted-emoji {
   padding: 2px 3px 1px 3px;
 }
+
+/*=========== COLORIZE ===========*/
 
 /* OVERLAYS */
 /* .overlay-grid {
@@ -592,11 +578,6 @@ h3 {
   margin-bottom: 5px;
   font-size: 1rem;
 }
-
-/*Mobile column heights, update when sticky nav ready*/
-/* .col {
-    min-height: 100vh;
-} */
 
 /*Mobile Bio Logo*/
 .bio-logo {
