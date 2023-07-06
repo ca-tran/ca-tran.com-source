@@ -52,7 +52,11 @@ SHARED CSS
   --color-black: rgb(15, 15, 15);
   --color-black-dark: #0d0d0d;
 
-  --color-link-hover: ;
+  --color-text-black: rgb(15, 15, 15);
+  --color-text-white: #f2f2f2;
+  --color-hover-black: rgb(15, 15, 15);
+  --color-hover-white: #f2f2f2;
+  --color-hover-red: #a90100;
 
   --transition-dark-mode: 300ms;
   --transition-ease: ease-in-out;
@@ -63,14 +67,12 @@ SHARED CSS
   --color-1: #043504;
   --color-2: #f1c93b;
   --color-3: #fff0bb;
-
   --color-4: #068fff;
-  --color-5: #eeeeee;
-  --color-7: #f86f03;
+  --color-5: #1e1e08;
 
-  --color-8: #0000aa;
-  --color-9: #f0f259;
-  --color-10: #a90100;
+  --color-bios-bg: #eeeeee;
+  --color-bios: #0000aa;
+  --color-bios-hover: #a90100;
 }
 
 html {
@@ -90,7 +92,7 @@ body {
 }
 
 header {
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 footer {
@@ -117,8 +119,8 @@ a {
 }
 
 a:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-hover-black);
+  color: var(--color-text-white);
   transition-duration: 400ms;
   cursor: pointer;
 }
@@ -217,7 +219,6 @@ button {
   cursor: pointer;
   border: 1px solid var(--color-black-1c);
   padding: 5px 8px;
-  /* margin-top: 2px; */
   background: var(--color-white);
   text-decoration: none;
 }
@@ -228,42 +229,20 @@ button:hover {
   background: var(--color-black-1c);
 }
 
-/* HOVER ON LINK TO SHOW IMAGES */
-#hover-images {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  height: 100vh;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  pointer-events: none;
-}
-
-.photo-overlay-img {
-  display: none;
-  max-width: 40vw;
-  max-height: 40vh;
-  object-fit: contain;
-  opacity: 75%;
-}
-
 /*======== CORNER NAV ========*/
 .corner-nav-container {
   font-size: 0.8rem;
   position: fixed;
   display: grid;
-  grid-template-columns: repeat(2, 1);
-  grid-template-rows: repeat(3, 1);
+  grid-template-columns: repeat(1, 1);
+  grid-template-rows: repeat(4, 1);
   grid-template-areas:
-    "modes more"
-    "bios reset"
-    "art photo";
-  top: 1rem;
-  right: 2rem;
+    "modes"
+    "bios"
+    "art"
+    "photo";
+  top: 35px;
+  right: 35px;
   z-index: 2;
 }
 
@@ -280,16 +259,13 @@ button[type="more"] {
 }
 
 button[type="less"],
-button[type="show-artwork"],
-button[type="show-photos"],
 button[type="colorizeReset"] {
   display: none;
-  /* visibility: hidden; */
 }
 
 /* CORNER NAV GRID */
 .corner-nav-container button {
-  margin: 3px;
+  margin: 3px 2px;
 }
 
 button[type="show-artwork"] {
@@ -328,12 +304,11 @@ button[type="colorizeReset"] {
   transition: opacity 1s ease-in-out;
 }
 
-#overseas-brands,
-#more-exp {
+.display-hidden {
   display: none;
-  opacity: 0;
+}
+.visibility-hidden {
   visibility: hidden;
-  transition: opacity 1s ease-in-out;
 }
 
 /*=========== MARQUEE ===========*/
@@ -505,7 +480,7 @@ button[type="submit"] {
 /*=========== COLORIZE ===========*/
 
 /* OVERLAYS */
-/* .overlay-grid {
+/* .overlay-container {
   display: grid;
   grid-template-columns: reapeat(2, 1fr);
   grid-template-areas: "overlay-c1 overlay-c2";
@@ -519,7 +494,8 @@ button[type="submit"] {
 } */
 
 /*=========== IMG OVERLAY ===========*/
-.overlay-container {
+.artwork-container,
+.photos-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -533,11 +509,17 @@ button[type="submit"] {
   pointer-events: none;
 }
 
-.overlay-img {
+.artwork-img,
+.photos-img {
   max-width: 40vw;
   max-height: 40vh;
   object-fit: contain;
-  opacity: 75%;
+  opacity: 80%;
+  transition: var(--transition-dark-mode) var(--transition-ease);
+}
+
+.photos-img {
+  opacity: 0;
 }
 
 /*=========== TRANSITIONS TO LIGHT MODE ===========*/
@@ -594,8 +576,8 @@ h3 {
 }
 
 .opacity-hidden {
-  /* opacity: 0; */
-  display: none;
+  opacity: 0;
+  /* display: none; */
 }
 
 /*Mobile Header*/
@@ -676,7 +658,7 @@ SHARED ANIMATION
 .col,
 footer,
 header,
-.overlay-container {
+.artwork-container {
   opacity: 0;
   animation-name: fade-in;
   animation-duration: 1000ms;
@@ -704,7 +686,7 @@ footer {
   animation-delay: 2250ms;
 }
 
-.overlay-container {
+.artwork-container {
   animation-delay: 1500ms;
 }
 
@@ -884,7 +866,8 @@ TABLET - SMALL DESKTOP
   }
 
   /* Overlay Img */
-  .overlay-img {
+  .artwork-img,
+  .photos-img {
     max-width: 30vw;
     max-height: 30vh;
   }
@@ -963,7 +946,8 @@ WIDE DESKTOP
   }
 
   /* Overlay Img */
-  .overlay-img {
+  .artwork-img,
+  .photos-img {
     max-width: 30vw;
     max-height: 30vh;
   }

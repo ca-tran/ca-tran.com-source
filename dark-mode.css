@@ -4,6 +4,11 @@
   background-color: var(--color-black-dark);
 }
 
+/* DARK MODE BUTTON */
+button[type="dark-mode"] {
+  display: none;
+}
+
 /* LOGOS */
 .splash-logo {
   filter: invert(1);
@@ -60,11 +65,6 @@ button:hover {
   border-color: var(--color-white);
 }
 
-/* DARK MODE BUTTON */
-button[type="dark-mode"] {
-  display: none;
-}
-
 button[type="light-mode"] {
   display: inherit;
   border-color: var(--color-white);
@@ -98,8 +98,8 @@ button[type="light-mode"] {
 
 /* HOVER LINKS */
 a:hover {
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--color-link-hover-white);
+  color: var(--color-text-black);
 }
 
 /* TRANSITIONS TO DARK MODE */

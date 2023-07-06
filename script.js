@@ -177,7 +177,6 @@ const images = [
   "images/overlay-images/artwork/Planet8.png",
   "images/overlay-images/artwork/Planet9.png",
   "images/overlay-images/artwork/Rampage.gif",
-  // "images/overlay-images/artwork/Redemption.gif",
   "images/overlay-images/artwork/screenprint1.jpg",
   "images/overlay-images/artwork/screenprint2.jpg",
   "images/overlay-images/artwork/screenprint4.jpg",
@@ -199,7 +198,7 @@ function getRandomImage() {
 
 function setOverlayImage() {
   const imageUrl = getRandomImage();
-  const overlayImg = document.querySelector(".overlay-img");
+  const overlayImg = document.querySelector(".artwork-img");
   overlayImg.src = imageUrl;
 }
 
@@ -249,50 +248,57 @@ function seeMoreExp() {
 
 // OVERLAY IMGS
 // Array of image URLs
-const photographyImages = [
-  "images/photography/0037_17.jpg",
-  "images/photography/0038_17A.jpg",
-  "images/photography/0039_18.jpg",
-  "images/photography/0040_18A.jpg",
-  "images/photography/0041_19.jpg",
+const photoImages = [
+  "images/photos/000004_June_Lomo 100.jpg",
+  "images/photos/000053_June_Lomo 100.jpg",
+  "images/photos/000057_June_Lomo 100.jpg",
+  "images/photos/000059_June_Lomo 100.jpg",
+  "images/photos/000060_June_Lomo 100.jpg",
+  "images/photos/000042010009.jpg",
+  "images/photos/000042010016.jpg",
+  "images/photos/000042010020.jpg",
+  "images/photos/0031_14.jpg",
+  "images/photos/0034_15A.jpg",
+  "images/photos/ScanImage140982.jpg",
+  "images/photos/ScanImage140995.jpg",
 ];
 
-let currentPhotographyIndex = -1;
+let currentPhotoIndex = -1;
 
-function getRandomPhotographyImage() {
-  let photographyIndex = Math.floor(Math.random() * photographyImages.length);
-  if (photographyIndex === currentPhotographyIndex) {
-    photographyIndex = (photographyIndex + 1) % photographyImages.length;
+function getRandomPhotoImage() {
+  let photoIndex = Math.floor(Math.random() * photoImages.length);
+  if (photoIndex === currentPhotoIndex) {
+    photoIndex = (photoIndex + 1) % photoImages.length;
   }
-  currentPhotographyIndex = photographyIndex;
-  return photographyImages[currentPhotographyIndex];
+  currentPhotoIndex = photoIndex;
+  return photoImages[currentPhotoIndex];
 }
 
-function setOverlayPhotographyImage() {
-  const photographyImageUrl = getRandomPhotographyImage();
-  const overlayPhotographyImg = document.querySelector(".photo-overlay-img");
-  overlayPhotographyImg.src = photographyImageUrl;
+function setOverlayPhotoImage() {
+  const photoImageUrl = getRandomPhotoImage();
+  const overlayPhotoImg = document.querySelector(".photos-img");
+  overlayPhotoImg.src = photoImageUrl;
 }
 
-setOverlayPhotographyImage();
+setOverlayPhotoImage();
 
 window.setInterval(() => {
-  setOverlayPhotographyImage();
+  setOverlayPhotoImage();
 }, 4000);
 
-function showImages() {
-  const photographyContainer = document.getElementsByID("hover-images");
-  const photographyContainer2 =
-    document.getElementsByClassName("photo-overlay-img");
-  // Show the container
-  photographyContainer.style.display = "flex";
-  photographyContainer2.style.display = "flex";
-}
+// HOVER SHOW IMAGE
+// function showImages() {
+//   const photoContainer = document.getElementsByID("hover-images");
+//   const photoContainer2 = document.getElementsByClassName("photo-overlay-img");
+//   // Show the container
+//   photoContainer.style.display = "flex";
+//   photoContainer2.style.display = "flex";
+// }
 
-function hideImages() {
-  // Hide the container
-  photographyContainer.style.display = "none";
-}
+// function hideImages() {
+//   // Hide the container
+//   photoContainer.style.display = "none";
+// }
 
 // MARQUEE V2
 // Get the container and content elements
@@ -327,50 +333,9 @@ animateMarquee();
 // Random Emojis
 // Predefined array of emojis
 const emojis = ["💙", "💚", "💛", "💜", "🍔", "🍟", "🍸", "🌮", "🍱"];
-let shuffledEmojis = [];
 
-// Function to shuffle emojis array
-function shuffleArray(array) {
-  let currentIndex = array.length,
-    randomIndex;
-
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-}
-
-// Function to display a new random emoji
-function displayRandomEmoji() {
-  if (shuffledEmojis.length === 0) {
-    // All emojis have been displayed, reshuffle the array
-    shuffledEmojis = shuffleArray([...emojis]);
-  }
-
-  const emojiContainer = document.getElementByClass("crafted-emoji");
-  const currentEmoji = shuffledEmojis.pop();
-
-  emojiContainer.textContent = currentEmoji;
-}
-
-// Initial display of a random emoji
-displayRandomEmoji();
-
-// Event listener for clicking the emoji
-document
-  .getElementByClass("crafted-emoji")
-  .addEventListener("click", displayRandomEmoji);
-
-// COLORIZE
-
-function colorize1() {
+// color
+function color1() {
   document.documentElement.style.setProperty("--color-black", "#043504");
   document.documentElement.style.setProperty("--color-black-1c", "#043504");
   document.documentElement.style.setProperty("--color-white", "#f1c93b");
@@ -378,7 +343,7 @@ function colorize1() {
   document.documentElement.style.setProperty("--color-black-dark", "#043504");
 }
 
-function colorize2() {
+function color2() {
   document.documentElement.style.setProperty("--color-black", "#703100");
   document.documentElement.style.setProperty("--color-black-1c", "#703100");
   document.documentElement.style.setProperty("--color-white", "#eeeeee");
@@ -387,29 +352,28 @@ function colorize2() {
 }
 
 // const biosBtn = document.getElementsByClassName(".bios-btn");
-// biosBtn.onclick = function colorizeBios() {
+// biosBtn.onclick = function colorBios() {
 
+// BIOS COLOR
 const biosBtn = document.getElementsByClassName(".bios-btn");
+const bgImg = document.getElementsByClassName(".bg-img");
 var biosOn = false;
 
-function biosToggle() {
-  if (biosOn) {
-    colorizeReset();
-  } else {
-    colorizeBios();
-  }
-}
-function colorizeBios() {
-  document.documentElement.style.setProperty("--color-black", "#0000aa");
-  document.documentElement.style.setProperty("--color-black-1c", "#0000aa");
+function colorBios() {
+  document.documentElement.style.setProperty("--color-black", "#0000AA");
+  document.documentElement.style.setProperty("--color-black-1c", "#0000AA");
   document.documentElement.style.setProperty("--color-white", "#eeeeee");
-  // document.documentElement.style.setProperty("--color-dark-gray", "#0000aa");
-  document.documentElement.style.setProperty("--color-black-dark", "#0000aa");
+  document.documentElement.style.setProperty("--color-hover-white", "#a90100");
+  document.documentElement.style.setProperty("--color-hover-black", "#a90100");
+  document.documentElement.style.setProperty("--color-text-black", "#f2f2f2");
+  document.documentElement.style.setProperty("--color-text-white", "#f2f2f2");
+  document.documentElement.style.setProperty("--color-black-dark", "#0000AA");
   biosBtn.classList.add("bios-active");
+  bgImg.style.backgroundImage = "url(images/svg/svg-bg-darkmode.svg)";
   biosOn = true;
 }
 
-function colorizeReset() {
+function colorReset() {
   document.documentElement.style.setProperty(
     "--color-black",
     "rgb(15, 15, 15)"
@@ -420,6 +384,14 @@ function colorizeReset() {
   document.documentElement.style.setProperty("--color-black-dark", "#0d0d0d");
   biosBtn.classList.remove("bios-active");
   biosOn = false;
+}
+
+function biosToggle() {
+  if (biosOn) {
+    colorReset();
+  } else {
+    colorBios();
+  }
 }
 
 // MORE BUTTONS
@@ -463,6 +435,23 @@ function lessButtons() {
 
   lessBtn.style.display = "none";
 }
+
+// SHOW/HIDE ARTWORK
+
+function showPhotos() {
+  const artworkContainer = document.querySelector(".artwork-img");
+  const photosContainer = document.querySelector(".photos-img");
+  artworkContainer.style.opacity = "0";
+  photosContainer.style.opacity = "80%";
+}
+function showArtwork() {
+  const artworkContainer = document.querySelector(".artwork-img");
+  const photosContainer = document.querySelector(".photos-img");
+  artworkContainer.style.opacity = "80%";
+  photosContainer.style.opacity = "0";
+}
+
+// SHOW/HIDE PHOTOS
 
 // SVG TRACE PATH
 // var paths = document.querySelectorAll("svg.bg-svg-animated paths"),
