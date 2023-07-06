@@ -83,7 +83,7 @@
               src="images/logo/catranlogo.svg"
               alt="Ca Tran"
               class="bio-logo"
-            /><span class="opacity-hidden">Ca Tran</span>
+            /><span class="display-hidden">Ca Tran</span>
           </h1>
           <div class="hr-line"></div>
           <h2 id="bio-intro">
@@ -320,15 +320,20 @@
         </section> -->
     </main>
     <!-- OVERLAYS -->
-    <div class="overlay-grid">
+    <div class="overlay-container">
       <!-- Overlay Artworks -->
-      <div class="overlay-container overlay-column-1">
-        <img class="overlay-img" src="" />
+      <div class="artwork-container">
+        <img class="artwork-img" src="" />
       </div>
-      <!-- Overlay Photos -->
+      <div class="photos-container">
+        <img class="photos-img" src="" />
+      </div>
+    </div>
+
+      <!-- Hover Photos -->
       <!-- <div id="hover-images"></div>
       <img class="photo-overlay-img" src="" /> -->
-    </div>
+    
     <footer>
       <div class="hr-line desktop-hidden"></div>
       <p>Ca Tran &copy <span id="current-year"></span></p>
@@ -346,11 +351,11 @@
         <!-- COLORIZE -->
         <!-- <button name="Color 1" type="colorize1" onclick="colorize1()">C1</button> -->
         <!-- <button name="Color 2" type="colorize2" onclick="colorize2()">C2</button> -->
-        <!-- <button name="BIOS color" type="colorizeBIOS" class="bios-btn" onclick="biosToggle()">BIOS</button> -->
+        <!-- <button name="BIOS color" type="colorizeBIOS" class="bios-btn" onclick="biosToggle(); addActiveClass();">BIOS</button> -->
         <!-- <button name="Reset color" type="colorizeReset" class="reset-btn" onclick="colorizeReset()">Reset</button> -->
         <!-- PHOTO / ART -->
-        <!-- <button name="Show art" type="show-artwork" class="artwork-btn">Artwork</button> -->
-        <!-- <button name="Show photos" type="show-photos" class="photos-btn">Photos</button> -->
+        <button name="Show artwork" type="show-artwork" class="artwork-btn" onclick="showArtwork()">Artwork</button>
+        <button name="Show photos" type="show-photos" class="photos-btn" onclick="showPhotos()">Photos</button>
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>

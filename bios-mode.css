@@ -1,0 +1,30 @@
+body {
+  filter: blur(3px);
+}
+
+a:hover {
+  background-color: var(--color-hover-red);
+  color: var(--color-text-white);
+}
+
+.bg-img {
+  background-image: none;
+}
+
+@media (min-width: 576px) {
+  .bg-img {
+    background-image: url(images/svg/svg-bg-darkmode.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 1440px) {
+  .bg-img {
+    background-image: url(images/svg/svg-bg-darkmode.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
