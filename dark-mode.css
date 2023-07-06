@@ -21,7 +21,7 @@ button[type="dark-mode"] {
 /* BODY BG & PATTERN */
 body {
   background-color: var(--color-black-dark);
-  color: var(--color-white);
+  color: var(--color-text-white);
 }
 
 .bg-img {
@@ -98,7 +98,7 @@ button[type="light-mode"] {
 
 /* HOVER LINKS */
 a:hover {
-  background-color: var(--color-link-hover-white);
+  background-color: var(--color-hover-white);
   color: var(--color-text-black);
 }
 
