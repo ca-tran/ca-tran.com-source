@@ -163,7 +163,7 @@ function darkMode2() {
   lightModeBtn.style.display = "inherit";
 }
 
-//RANDOM IMG OVERLAY
+//RANDOM ARTWORK
 const images = [
   "images/overlay-images/artwork/Civil-War.gif",
   "images/overlay-images/artwork/fighter.gif",
@@ -208,6 +208,66 @@ window.setInterval(() => {
   setOverlayImage();
 }, 4000);
 
+// RANDOM PHOTOS
+const photoImages = [
+  "images/photos/korea/000046460030.jpg",
+  "images/photos/korea/000046460031.jpg",
+  "images/photos/korea/000046460034.jpg",
+  "images/photos/korea/000046460037.jpg",
+  "images/photos/korea/000046470009.jpg",
+  "images/photos/korea/000046470013.jpg",
+  "images/photos/korea/000046490026.jpg",
+  "images/photos/korea/000046490028.jpg",
+  "images/photos/korea/000046500028.jpg",
+  "images/photos/taiwan/IMG_7040.jpg",
+  "images/photos/taiwan/IMG_7088.jpg",
+  "images/photos/taiwan/IMG_7229.jpg",
+  "images/photos/taiwan/IMG_7551.jpg",
+  "images/photos/taiwan/IMG_7597.jpg",
+  "images/photos/taiwan/IMG_7647.jpg",
+  "images/photos/taiwan/IMG_7779.jpg",
+  "images/photos/taiwan/IMG_7838.jpg",
+  "images/photos/taiwan/IMG_8367.jpg",
+  "images/photos/taiwan/IMG_8388.jpg",
+  "images/photos/taiwan/IMG_8396.jpg",
+  "images/photos/taiwan/IMG_8399.jpg",
+  "images/photos/taiwan/IMG_8435.jpg",
+  "images/photos/taiwan/IMG_8449.jpg",
+  "images/photos/vietnam/0031_14.jpg",
+  "images/photos/vietnam/0034_15A.jpg",
+  "images/photos/vietnam/000053_June_Lomo 100.jpg",
+  "images/photos/vietnam/000057_June_Lomo 100.jpg",
+  "images/photos/vietnam/000059_June_Lomo 100.jpg",
+  "images/photos/vietnam/000060_June_Lomo 100.jpg",
+  "images/photos/vietnam/000042010009.jpg",
+  "images/photos/vietnam/000042010016.jpg",
+  "images/photos/vietnam/000042010020.jpg",
+  "images/photos/vietnam/000042010025.jpg",
+];
+
+let currentPhotoIndex = -1;
+
+function getRandomPhotoImage() {
+  let photoIndex = Math.floor(Math.random() * photoImages.length);
+  if (photoIndex === currentPhotoIndex) {
+    photoIndex = (photoIndex + 1) % photoImages.length;
+  }
+  currentPhotoIndex = photoIndex;
+  return photoImages[currentPhotoIndex];
+}
+
+function setOverlayPhotoImage() {
+  const photoImageUrl = getRandomPhotoImage();
+  const overlayPhotoImg = document.querySelector(".photos-img");
+  overlayPhotoImg.src = photoImageUrl;
+}
+
+setOverlayPhotoImage();
+
+window.setInterval(() => {
+  setOverlayPhotoImage();
+}, 4000);
+
 //AUTO COPYRIGHT CURRENT YEAR, I'M LAZY TO UPDATE MY WEB
 const currentYear = document.getElementById("current-year");
 
@@ -246,57 +306,6 @@ function seeMoreExp() {
   seeMoreExpBar.style.opacity = "0";
 }
 
-// OVERLAY IMGS
-// Array of image URLs
-const photoImages = [
-  "images/photos/000053_June_Lomo 100.jpg",
-  "images/photos/000057_June_Lomo 100.jpg",
-  "images/photos/000059_June_Lomo 100.jpg",
-  "images/photos/000060_June_Lomo 100.jpg",
-  "images/photos/000042010009.jpg",
-  "images/photos/000042010016.jpg",
-  "images/photos/000042010020.jpg",
-  "images/photos/0031_14.jpg",
-  "images/photos/0034_15A.jpg",
-];
-
-let currentPhotoIndex = -1;
-
-function getRandomPhotoImage() {
-  let photoIndex = Math.floor(Math.random() * photoImages.length);
-  if (photoIndex === currentPhotoIndex) {
-    photoIndex = (photoIndex + 1) % photoImages.length;
-  }
-  currentPhotoIndex = photoIndex;
-  return photoImages[currentPhotoIndex];
-}
-
-function setOverlayPhotoImage() {
-  const photoImageUrl = getRandomPhotoImage();
-  const overlayPhotoImg = document.querySelector(".photos-img");
-  overlayPhotoImg.src = photoImageUrl;
-}
-
-setOverlayPhotoImage();
-
-window.setInterval(() => {
-  setOverlayPhotoImage();
-}, 4000);
-
-// HOVER SHOW IMAGE
-// function showImages() {
-//   const photoContainer = document.getElementsByID("hover-images");
-//   const photoContainer2 = document.getElementsByClassName("photo-overlay-img");
-//   // Show the container
-//   photoContainer.style.display = "flex";
-//   photoContainer2.style.display = "flex";
-// }
-
-// function hideImages() {
-//   // Hide the container
-//   photoContainer.style.display = "none";
-// }
-
 // MARQUEE V2
 // Get the container and content elements
 const container = document.querySelector(".marquee-container");
@@ -328,8 +337,12 @@ function animateMarquee() {
 animateMarquee();
 
 // Random Emojis
-// Predefined array of emojis
-const emojis = ["💙", "💚", "💛", "💜", "🍔", "🍟", "🍸", "🌮", "🍱"];
+function randomEmoji() {
+  const emojis = ["🍔", "🍟", "🍸", "🌮", "🍱", "🍚", "🍣", "💖"];
+  const emojiContainer = document.querySelector(".crafted-emoji");
+  const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+  emojiContainer.innerText = emoji;
+}
 
 // color
 function color1() {
@@ -352,8 +365,8 @@ function color2() {
 // biosBtn.onclick = function colorBios() {
 
 // BIOS COLOR
-const biosBtn = document.getElementsByClassName(".bios-btn");
-const bgImg = document.getElementsByClassName(".bg-img");
+const biosBtn = document.querySelector(".bios-btn");
+const bgImg = document.querySelector(".bg-img");
 var biosOn = false;
 
 function colorBios() {
@@ -448,48 +461,6 @@ function showArtwork() {
   photosContainer.style.opacity = "0";
 }
 
-// SHOW/HIDE PHOTOS
-
-// SVG TRACE PATH
-// var paths = document.querySelectorAll("svg.bg-svg-animated paths"),
-//   i = 0;
-
-// paths.forEach(function (item, index) {
-//   i++;
-//   var pathLength = item.getTotalLength();
-//   item.setAttribute("stroke-dasharray", pathLength);
-//   item.setAttribute("stroke-dashoffset", pathLength);
-//   if ((index = 0)) {
-//     item.innerHTML =
-//       "<animate id='a + i + ''attributeName='stroke-dashoffset-' begin='0s' dur='3s' to='0' fill='freeze'/>";
-//   } else {
-//     item.innerHTML =
-//       "<animate id='a + i + ''attributeName='stroke-dashoffset-' begin='a " +
-//       i +
-//       ".end' dur='3s' to='0' fill='freeze'/>";
-//   }
-
-//   console.log(index, pathLength);
-// });
-
-// SVG TRACE PATH V2.0
-// const paths = document.querySelectorAll(".my-path");
-
-// // Animate the tracing of each path
-// function tracePaths() {
-//   paths.forEach((path) => {
-//     const length = path.getTotalLength();
-//     path.style.strokeDasharray = length;
-//     path.style.strokeDashoffset = length;
-
-//     path.style.transition = "stroke-dashoffset 5s ease-in-out";
-//     path.style.strokeDashoffset = "0";
-//   });
-// }
-
-// // Call the tracePaths function when the page loads
-// window.onload = tracePaths;
-
 // GREETS BASED ON TIME
 // const timeGreets = document.querySelector(".time-greets");
 // const isMorning = currentTime.getHours() >= 7 || currentTime.getHours() < 18;
@@ -507,8 +478,6 @@ function showArtwork() {
 //   timeGreets.textContent = "G'night,";
 // };
 
-//GALLERY
-
 // GRAB CONTACT EMAIL FORM
 // const form = document.getElementById("contact-form");
 // form.addEventListener("submit", function (event) {
@@ -520,30 +489,3 @@ function showArtwork() {
 //   const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage:%0D%0A${message}`;
 //   window.location.href = `mailto:hello@ca-tran.com?subject=${subject}&body=${body}`;
 // });
-
-//LIGHT DARK MODE MANUAL
-// //DARK MODE
-// function darkMode() {
-//   const darkElement = document.body;
-//   const lightButton = document.querySelector(".light-mode-button");
-//   darkElement.classList.remove("light-mode");
-//   darkElement.classList.toggle("dark-mode");
-// }
-
-// //LIGHT MODE
-// function lightMode() {
-//   const lightElement = document.body;
-//   const darkButton = document.querySelector(".dark-mode-button");
-//   lightElement.classList.remove("dark-mode");
-//   lightElement.classList.toggle("light-mode");
-// }
-
-// //DARK MODE
-// function darkMode() {
-//   const link = document.createElement('link');
-//   link.rel = 'stylesheet';
-//   link.href = 'dark-mode.css';
-
-//   // Add the link element to the page's head element
-//   document.head.appendChild(link);
-// }

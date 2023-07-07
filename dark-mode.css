@@ -61,6 +61,11 @@ button:hover {
   color: var(--color-black);
 }
 
+button:active {
+  box-shadow: 0px 3px 7px rgba(250, 250, 250, 0.75);
+  transition: 100ms;
+}
+
 .request-portfolio {
   border-color: var(--color-white);
 }

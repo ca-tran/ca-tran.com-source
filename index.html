@@ -155,7 +155,7 @@
             graphic design,
             <a
               id="bio-expertise"
-              class="no-arrow-link"
+              class="no-arrow"
               onclick="displayExpertise()"
               >and more.</a
             >
@@ -171,7 +171,7 @@
             <a
               href="https://www.google.com/maps/place/Ho+Chi+Minh+City"
               target="_blank"
-              class="no-arrow-link"
+              class="no-arrow"
               style="text-decoration: none"
               >Saigon (HCMC)</a
             >, Vietnam.
@@ -234,9 +234,14 @@
           <h3>Say Hi!</h3>
           <p><a href="mailto:hello@ca-tran.com">hello@ca-tran.com</a></p>
           <div class="separator"></div>
-          <h3>Connect</h3>
+          <h3>Connect!</h3>
           <div>
             <ul>
+              <li>
+                <a href="https://www.instagram.com/kkkktrannnn/" target="_blank"
+                  >Instagram</a
+                >
+              </li>
               <li>
                 <a href="https://www.behance.net/catrandesign" target="_blank"
                   >Behance</a
@@ -255,7 +260,7 @@
                 >
               </li>
             </ul>
-            <div class="separator"></div>
+            <!-- <div class="separator"></div>
             <h3>Photos</h3>
             <ul>
               <li>
@@ -263,11 +268,9 @@
                   >Instagram</a
                 >
               </li>
-            </ul>
+            </ul> -->
           </div>
           <!-- EMOJI -->
-      <!-- <p id="crafted-emoji"><a class="crafted-emoji no-arrow-link">🔥</a></p>
-      <div id="emojis"></div> -->
         </section>
         <!--<section id="projects" class="col column-4">
 
@@ -329,11 +332,6 @@
         <img class="photos-img" src="" />
       </div>
     </div>
-
-      <!-- Hover Photos -->
-      <!-- <div id="hover-images"></div>
-      <img class="photo-overlay-img" src="" /> -->
-    
     <footer>
       <div class="hr-line desktop-hidden"></div>
       <p>Ca Tran &copy <span id="current-year"></span></p>
@@ -342,10 +340,11 @@
         <span id="time"></span>
       </p>
       <p id="weather-text"></p>
+      <p id="crafted-emoji"><a class="crafted-emoji no-arrow" onclick="randomEmoji()">💖</a></p>
       <div class="corner-nav-container">
         <!-- DARK LIGHT MODE -->
-        <button name="Dark mode" type="dark-mode" class="mobile-hidden" onclick="darkMode2()">Dark</button>
-        <button name="Light mode" type="light-mode" class="mobile-hidden" onclick="lightMode2()">Light</button>
+        <button name="Dark mode" type="dark-mode" class="" onclick="darkMode2()">Dark</button>
+        <button name="Light mode" type="light-mode" class="" onclick="lightMode2()">Light</button>
         <!-- <button name="More" type="more" class="more-btn" onclick="moreButtons()">More</button> -->
         <!-- <button name="Less" type="less" class="less-btn" onclick="lessButtons()">Less</button> -->
         <!-- COLORIZE -->
@@ -354,7 +353,7 @@
         <!-- <button name="BIOS color" type="colorizeBIOS" class="bios-btn" onclick="biosToggle(); addActiveClass();">BIOS</button> -->
         <!-- <button name="Reset color" type="colorizeReset" class="reset-btn" onclick="colorizeReset()">Reset</button> -->
         <!-- PHOTO / ART -->
-        <button name="Show artwork" type="show-artwork" class="artwork-btn" onclick="showArtwork()">Artwork</button>
+        <button name="Show artwork" type="show-artwork" class="artwork-btn" onclick="showArtwork()">Artworks</button>
         <button name="Show photos" type="show-photos" class="photos-btn" onclick="showPhotos()">Photos</button>
       </div>
     </footer>
