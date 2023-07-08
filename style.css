@@ -34,7 +34,9 @@ Fonts
 
 /*
 ===================================
+===================================
 SHARED CSS
+===================================
 ===================================
 */
 
@@ -46,6 +48,8 @@ SHARED CSS
 
 :root {
   --color-white: #f2f2f2;
+  --color-bg-svg-white: #e5e5e5;
+  --color-bg-svg-black: #292929;
   --color-gray: #d1d1d1;
   --color-dark-gray: #939393;
   --color-black-1c: #1c1c1c;
@@ -87,9 +91,9 @@ body {
   -moz-osx-font-smoothing: antialiased;
 }
 
-.bg-img {
+/* .bg-img {
   background-image: none;
-}
+} */
 
 header {
   margin-top: 45px;
@@ -97,8 +101,8 @@ header {
 
 footer {
   bottom: 0;
-  margin-top: 75px;
-  margin-bottom: 30px;
+  margin-top: 60px;
+  margin-bottom: 25px;
 }
 
 h1,
@@ -115,7 +119,7 @@ h3 {
 
 a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover {
@@ -317,6 +321,11 @@ button[type="colorizeReset"] {
   visibility: hidden;
 }
 
+.h1-hidden {
+  position: fixed;
+  visibility: hidden;
+}
+
 /*=========== MARQUEE ===========*/
 .marquee-txt-overlay {
   position: absolute;
@@ -474,10 +483,6 @@ button[type="submit"] {
 }
 
 /*=========== CRAFTED EMOJI ===========*/
-#crafted-emoji {
-  grid-column-start: 4;
-  grid-column-end: 5;
-}
 
 .crafted-emoji {
   user-select: none;
@@ -495,21 +500,13 @@ button[type="submit"] {
 
 /*=========== COLORIZE ===========*/
 
-/* OVERLAYS */
+/* =========== OVERLAYS ===========*/
 /* .overlay-container {
-  display: grid;
-  grid-template-columns: reapeat(2, 1fr);
-  grid-template-areas: "overlay-c1 overlay-c2";
-}
-
-.overlay-column-1 {
-  grid-area: overlay-c1;
-}
-.overlay-column-2 {
-  grid-area: overlay-c2;
+  height: 100vh;
+  width: 100vw;
 } */
 
-/*=========== IMG OVERLAY ===========*/
+/*=========== PHOTOS/ARTWORK OVERLAY ===========*/
 .artwork-container,
 .photos-container {
   position: fixed;
@@ -527,8 +524,8 @@ button[type="submit"] {
 
 .artwork-img,
 .photos-img {
-  max-width: 40vw;
-  max-height: 40vh;
+  max-width: 50vw;
+  max-height: 50vh;
   object-fit: contain;
   opacity: 80%;
   transition: var(--transition-dark-mode) var(--transition-ease);
@@ -545,15 +542,17 @@ h3,
 .hr-line,
 .marquee-txt-overlay-dark,
 .faces-container img,
-.bg-img,
+.bg-svg path,
 button {
   transition: var(--transition-dark-mode) var(--transition-ease);
 }
 
 /*
-===========
+================
+================
 MOBILE
-===========
+================
+================
 */
 body {
   margin-left: 30px;
@@ -668,6 +667,8 @@ GRID COLUMNS
 SHARED ANIMATION
 ================
 */
+
+/* COLUMNS ANIMATION */
 .col,
 footer,
 header,
@@ -714,6 +715,48 @@ footer {
   animation-duration: 1000ms;
   animation-delay: 1000ms;
   animation-fill-mode: forwards;
+}
+
+/* Background Animated SVG */
+#bg-svg {
+  position: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.bg-svg-path {
+  fill: none;
+  stroke: var(--color-bg-svg-white);
+  stroke-width: 1;
+  stroke-dasharray: 0.5;
+  stroke-dashoffset: 1;
+}
+
+.bg-svg-path-1 {
+  animation: svg-trace 5s linear infinite;
+}
+
+.bg-svg-path-2 {
+  animation-delay: 500ms;
+
+  animation: svg-trace 5s linear reverse infinite;
+}
+
+.bg-svg-path-3 {
+  animation-delay: 1000ms;
+  animation: svg-trace 5s linear reverse infinite;
+}
+
+@keyframes svg-trace {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes fade-in {
@@ -767,9 +810,11 @@ footer {
 }
 
 /*
-========
+================
+================
 TABLET - SMALL DESKTOP
-========
+================
+================
 */
 @media (min-width: 576px) {
   body {
@@ -777,39 +822,12 @@ TABLET - SMALL DESKTOP
     margin-right: 60px;
   }
 
-  .bg-img {
+  /* .bg-img {
     background-image: url(images/svg/svg-bg.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-  }
-
-  /* Background Animated SVG */
-  .bg-svg-container {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    z-index: -2;
-    opacity: 100%;
-  }
-
-  .bg-svg-path {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: dash 5s linear alternate infinite;
-  }
-
-  @keyframes dash {
-    from {
-      stroke-dashoffset: 1;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
+  } */
 
   .scroll-down-link {
     display: none;
@@ -818,10 +836,8 @@ TABLET - SMALL DESKTOP
   .inner-grid {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "c1 c2"
-      "c1 c3";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "c1 c2 c3";
     column-gap: 50px;
   }
 
@@ -848,9 +864,13 @@ TABLET - SMALL DESKTOP
 
   /*Tablet Footer*/
   footer {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    left: 0;
+    bottom: 0;
     column-gap: 50px;
+    margin-bottom: 0;
   }
 
   .footer-time {
@@ -863,10 +883,6 @@ TABLET - SMALL DESKTOP
     grid-column-end: 4;
   }
 
-  footer .hr-line {
-    grid-column-start: 1;
-    grid-column-end: 4;
-  }
   /*Desktop Hidden*/
   .desktop-hidden {
     display: none;
@@ -887,9 +903,11 @@ TABLET - SMALL DESKTOP
 }
 
 /*
-========
+================
+================
 WIDE DESKTOP
-========
+================
+================
 */
 @media (min-width: 1440px) {
   .col {
@@ -908,12 +926,12 @@ WIDE DESKTOP
     display: none;
   }
 
-  .bg-img {
+  /* .bg-img {
     background-image: url(images/svg/svg-bg.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-  }
+  } */
 
   body {
     margin-left: 90px;
@@ -943,6 +961,7 @@ WIDE DESKTOP
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap: 100px;
+    margin-top: 90px;
   }
 
   .footer-time {
@@ -970,7 +989,13 @@ WIDE DESKTOP
     display: inherit;
   }
 }
-
+/*
+================
+================
+ULTRA WIDE DESKTOP
+================
+================
+*/
 @media (min-width: 1921px) {
   body {
     font-size: 1.1rem;
@@ -981,8 +1006,10 @@ WIDE DESKTOP
   footer {
     margin-top: 120px;
   }
-
   .corner-nav-container {
     top: 45px;
+  }
+  .crafted-emoji {
+    font-size: 1.3rem;
   }
 }
