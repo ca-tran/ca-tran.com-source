@@ -49,7 +49,7 @@ SHARED CSS
 :root {
   --color-white: #f2f2f2;
   --color-bg-svg-white: #e5e5e5;
-  --color-bg-svg-black: #292929;
+  --color-bg-svg-black: #1b1b1b;
   --color-gray: #d1d1d1;
   --color-dark-gray: #939393;
   --color-black-1c: #1c1c1c;
@@ -144,7 +144,7 @@ li {
 }
 
 /* MAIN MENU */
-.main-menu {
+/* .main-menu {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -156,7 +156,7 @@ li {
   font-size: 1.2rem;
   text-align: center;
   text-decoration: none;
-}
+} */
 
 /*Separators*/
 .hr-line {
@@ -235,10 +235,6 @@ button:active {
   transition: 100ms;
 }
 
-button:visited {
-  color: var(--color-white);
-}
-
 /*======== CORNER NAV ========*/
 .corner-nav-container {
   font-size: 0.8rem;
@@ -275,6 +271,8 @@ button[type="colorizeReset"] {
 
 /* CORNER NAV GRID */
 .corner-nav-container button {
+  font-size: 1rem;
+  padding: 5px 10px;
   margin: 3px 2px;
 }
 
@@ -497,8 +495,6 @@ button[type="submit"] {
   background-color: transparent;
   transition: var(--transition-dark-mode) var(--transition-ease);
 }
-
-/*=========== COLORIZE ===========*/
 
 /* =========== OVERLAYS ===========*/
 /* .overlay-container {
@@ -897,8 +893,8 @@ TABLET - SMALL DESKTOP
   /* Overlay Img */
   .artwork-img,
   .photos-img {
-    max-width: 35vw;
-    max-height: 35vh;
+    max-width: 30vw;
+    max-height: 30vh;
   }
 }
 
@@ -980,8 +976,8 @@ WIDE DESKTOP
   /* Overlay Img */
   .artwork-img,
   .photos-img {
-    max-width: 35vw;
-    max-height: 35vh;
+    max-width: 30vw;
+    max-height: 30vh;
   }
 
   #overseas-brands,
