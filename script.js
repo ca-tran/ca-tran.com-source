@@ -276,48 +276,45 @@ window.onload = function () {
   currentYear.textContent = getCurrentYear;
 };
 
-//SEE MORE BRANDS
-const overseasBrands = document.querySelector("#overseas-brands");
-const seeMoreBrandsBtn = document.querySelector(".see-more-brands-btn");
-const seeMoreBrandsBar = document.querySelector(".gradident-bar-brands");
-
-function seeMoreBrands() {
-  overseasBrands.style.visibility = "visible";
-  overseasBrands.style.opacity = "1";
-  overseasBrands.style.display = "inherit";
-  seeMoreBrandsBtn.style.display = "none";
-  seeMoreBrandsBtn.style.opacity = "0";
-  seeMoreBrandsBar.style.dislay = "none";
-  seeMoreBrandsBar.style.opacity = "0";
-}
-
-//SEE MORE EXP
-const moreExp = document.querySelector("#more-exp");
-const seeMoreExpBtn = document.querySelector(".see-more-exp-btn");
-const seeMoreExpBar = document.querySelector(".gradident-bar-exp");
-
-function seeMoreExp() {
-  moreExp.style.visibility = "visible";
-  moreExp.style.opacity = "1";
-  moreExp.style.display = "inherit";
-  seeMoreExpBtn.style.display = "none";
-  seeMoreExpBtn.style.opacity = "0";
-  seeMoreExpBar.style.dislay = "none";
-  seeMoreExpBar.style.opacity = "0";
-}
-
 // RANDOM EMOJIS
 function randomEmoji() {
-  const emojis = ["🍔", "🍟", "🍸", "🌮", "🍱", "🍚", "🍣", "💖", "🧧"];
+  const emojis = [
+    "🍔",
+    "🍟",
+    "🍸",
+    "🌮",
+    "🍱",
+    "🍚",
+    "🍣",
+    "💖",
+    "🧧",
+    "🌯",
+    "🍮",
+    "🥑",
+    "👽",
+    "🛹",
+    "🦘",
+    "👾",
+    "🌌",
+    "🎮",
+    "📚",
+    "🌏",
+    "🌲",
+    "🌳",
+    "🌾",
+  ];
   const emojiContainer = document.querySelector(".crafted-emoji");
   const emoji = emojis[Math.floor(Math.random() * emojis.length)];
   emojiContainer.innerText = emoji;
 }
 
+window.addEventListener("load", (event) => {
+  randomEmoji();
+});
+
 // color
 function color1() {
   document.documentElement.style.setProperty("--color-black", "#043504");
-  document.documentElement.style.setProperty("--color-black-1c", "#043504");
   document.documentElement.style.setProperty("--color-white", "#f1c93b");
   document.documentElement.style.setProperty("--color-dark-gray", "#043504");
   document.documentElement.style.setProperty("--color-black-dark", "#043504");
@@ -325,7 +322,6 @@ function color1() {
 
 function color2() {
   document.documentElement.style.setProperty("--color-black", "#703100");
-  document.documentElement.style.setProperty("--color-black-1c", "#703100");
   document.documentElement.style.setProperty("--color-white", "#eeeeee");
   document.documentElement.style.setProperty("--color-dark-gray", "#703100");
   document.documentElement.style.setProperty("--color-black-dark", "#703100");
@@ -341,7 +337,6 @@ var biosOn = false;
 
 function colorBios() {
   document.documentElement.style.setProperty("--color-black", "#0000AA");
-  document.documentElement.style.setProperty("--color-black-1c", "#0000AA");
   document.documentElement.style.setProperty("--color-white", "#eeeeee");
   document.documentElement.style.setProperty("--color-hover-white", "#a90100");
   document.documentElement.style.setProperty("--color-hover-black", "#a90100");
@@ -358,7 +353,7 @@ function colorReset() {
     "--color-black",
     "rgb(15, 15, 15)"
   );
-  document.documentElement.style.setProperty("--color-black-1c", "#1c1c1c");
+  document.documentElement.style.setProperty("--color-black", "#1c1c1c");
   document.documentElement.style.setProperty("--color-white", "#f2f2f2");
   document.documentElement.style.setProperty("--color-dark-gray", "#939393");
   document.documentElement.style.setProperty("--color-black-dark", "#0d0d0d");
@@ -431,14 +426,28 @@ function showArtwork() {
   photosContainer.style.opacity = "0";
 }
 
-// SVG TRACE
+// //SEE MORE BRANDS
+// const overseasBrands = document.querySelector("#overseas-brands");
+// const seeMoreBrandsBtn = document.querySelector(".see-more-brands-btn");
 
-// var path = document.querySelector(".bg-svg-path");
-// var length = path.getTotalLength();
+// function seeMoreBrands() {
+//   overseasBrands.style.visibility = "visible";
+//   overseasBrands.style.opacity = "1";
+//   overseasBrands.style.display = "inherit";
+//   seeMoreBrandsBtn.style.display = "none";
+//   seeMoreBrandsBtn.style.opacity = "0";
+// }
 
-// for (var i = 0; i < pathEls.length; i++) {
-//   var path = path[i];
-//   pathEl.setAttribute("stroke-dashoffset", length);
+// //SEE MORE EXP
+// const moreExp = document.querySelector("#more-exp");
+// const seeMoreExpBtn = document.querySelector(".see-more-exp-btn");
+
+// function seeMoreExp() {
+//   moreExp.style.visibility = "visible";
+//   moreExp.style.opacity = "1";
+//   moreExp.style.display = "inherit";
+//   seeMoreExpBtn.style.display = "none";
+//   seeMoreExpBtn.style.opacity = "0";
 // }
 
 // GREETS BASED ON TIME
