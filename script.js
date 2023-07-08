@@ -306,39 +306,9 @@ function seeMoreExp() {
   seeMoreExpBar.style.opacity = "0";
 }
 
-// MARQUEE V2
-// Get the container and content elements
-const container = document.querySelector(".marquee-container");
-const content = document.querySelector(".marquee-content");
-
-// Get the width of the container and content
-const containerWidth = container.offsetWidth;
-const contentWidth = content.offsetWidth;
-
-// Clone the content element and add it to the container
-const clonedContent = content.cloneNode(true);
-container.appendChild(clonedContent);
-
-// Define the animation function
-function animateMarquee() {
-  // Move the container to the left by 1 pixel
-  container.style.transform = "translateX(-1px)";
-
-  // If the content has scrolled offscreen, reset its position
-  if (container.offsetLeft < -contentWidth) {
-    container.style.transform = `translateX(${containerWidth}px)`;
-  }
-
-  // Repeat the animation every frame
-  requestAnimationFrame(animateMarquee);
-}
-
-// Start the animation
-animateMarquee();
-
-// Random Emojis
+// RANDOM EMOJIS
 function randomEmoji() {
-  const emojis = ["🍔", "🍟", "🍸", "🌮", "🍱", "🍚", "🍣", "💖"];
+  const emojis = ["🍔", "🍟", "🍸", "🌮", "🍱", "🍚", "🍣", "💖", "🧧"];
   const emojiContainer = document.querySelector(".crafted-emoji");
   const emoji = emojis[Math.floor(Math.random() * emojis.length)];
   emojiContainer.innerText = emoji;
@@ -461,6 +431,16 @@ function showArtwork() {
   photosContainer.style.opacity = "0";
 }
 
+// SVG TRACE
+
+// var path = document.querySelector(".bg-svg-path");
+// var length = path.getTotalLength();
+
+// for (var i = 0; i < pathEls.length; i++) {
+//   var path = path[i];
+//   pathEl.setAttribute("stroke-dashoffset", length);
+// }
+
 // GREETS BASED ON TIME
 // const timeGreets = document.querySelector(".time-greets");
 // const isMorning = currentTime.getHours() >= 7 || currentTime.getHours() < 18;
@@ -489,3 +469,33 @@ function showArtwork() {
 //   const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage:%0D%0A${message}`;
 //   window.location.href = `mailto:hello@ca-tran.com?subject=${subject}&body=${body}`;
 // });
+
+// // MARQUEE V2
+// // Get the container and content elements
+// const container = document.querySelector(".marquee-container");
+// const content = document.querySelector(".marquee-content");
+
+// // Get the width of the container and content
+// const containerWidth = container.offsetWidth;
+// const contentWidth = content.offsetWidth;
+
+// // Clone the content element and add it to the container
+// const clonedContent = content.cloneNode(true);
+// container.appendChild(clonedContent);
+
+// // Define the animation function
+// function animateMarquee() {
+//   // Move the container to the left by 1 pixel
+//   container.style.transform = "translateX(-1px)";
+
+//   // If the content has scrolled offscreen, reset its position
+//   if (container.offsetLeft < -contentWidth) {
+//     container.style.transform = `translateX(${containerWidth}px)`;
+//   }
+
+//   // Repeat the animation every frame
+//   requestAnimationFrame(animateMarquee);
+// }
+
+// // Start the animation
+// animateMarquee();
