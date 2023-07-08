@@ -88,11 +88,17 @@ button[type="light-mode"] {
   filter: invert(1);
 }
 
-.marquee-txt-overlay-light {
-  display: none;
+/* MARQUEE GRADIENTS */
+.marquee-gradient-light {
+  opacity: 0;
 }
 
-.marquee-txt-overlay-dark {
+.marquee-gradient-dark {
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    var(--color-black-dark)
+  );
   opacity: 1;
 }
 

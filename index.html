@@ -129,7 +129,9 @@
           <div class="faces-container">
             <img class="faces-img" src="" alt="" />
           </div>
-          <div class="marquee-txt-overlay-light marquee-txt-overlay-dark"></div>
+          <!-- <div
+            class="marquee-gradient marquee-gradient-light marquee-gradient-dark"
+          ></div> -->
           <marquee
             id="greetings"
             direction="right"
@@ -137,8 +139,6 @@
             onmouseover="stop()"
             onmouseout="start()"
           >
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Buongiorno
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             您好
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -151,8 +151,6 @@
             Hello
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Xin Chào
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Buongiorno
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             您好
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -167,8 +165,6 @@
             Hello
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Xin Chào
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Buongiorno
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             您好
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,17 +204,35 @@
             >, Vietnam.
           </p>
           <div class="separator"></div>
-          <h3>Creative Portfolio</h3>
+          <h3>Portfolio</h3>
           <!-- REQUEST BUTTON -->
-          <button
+          <!-- <button
             onclick="location.href='mailto:hello@ca-tran.com?subject=Portfolio Request'"
             name="Request Portfolio"
-            type="request"
+            type="request-portfolio"
           >
             Request Portfolio
+          </button> -->
+          <button
+            onclick="location.href='mailto:hello@ca-tran.com?subject=Portfolio Request'"
+            name="Commercial Projects"
+            type="commercial-projects"
+          >
+            Commercial
           </button>
-          <!-- KEEP SCROLLING -->
-          <p class="scroll-down-link">↓</p>
+          <button
+            onclick="location.href=''"
+            name="Personal Projects"
+            type="personal-projects"
+          >
+            Personal
+          </button>
+          <!-- CV -->
+          <!-- <button onclick="location.href=''" name="CV" type="CV">CV</button> -->
+          <!-- SCROLL ARROW -->
+          <!-- <div>
+            <p class="scroll-down">👀</p>
+          </div> -->
         </section>
         <section id="experience" class="col column-2">
           <h2>Experience</h2>
@@ -337,18 +351,19 @@
             >
           </p>
         </section> -->
+        <!-- OVERLAYS -->
+        <div class="overlay-container">
+          <!-- Overlay Artworks -->
+          <div class="artwork-container">
+            <img class="artwork-img" src="" />
+          </div>
+          <!-- Overlay Photos -->
+          <div class="photos-container">
+            <img class="photos-img" src="" />
+          </div>
+        </div>
       </div>
     </main>
-    <!-- OVERLAYS -->
-    <div class="overlay-container">
-      <!-- Overlay Artworks -->
-      <div class="artwork-container">
-        <img class="artwork-img" src="" />
-      </div>
-      <div class="photos-container">
-        <img class="photos-img" src="" />
-      </div>
-    </div>
     <footer>
       <div class="hr-line desktop-hidden"></div>
       <p>
@@ -365,20 +380,10 @@
       <!-- CORNER NAV -->
       <div class="corner-nav-container">
         <!-- DARK LIGHT MODE -->
-        <button
-          name="Dark mode"
-          type="dark-mode"
-          class=""
-          onclick="darkMode2()"
-        >
+        <button name="Dark mode" type="dark-mode" onclick="darkMode2()">
           🌙
         </button>
-        <button
-          name="Light mode"
-          type="light-mode"
-          class=""
-          onclick="lightMode2()"
-        >
+        <button name="Light mode" type="light-mode" onclick="lightMode2()">
           🌞
         </button>
         <!-- <button name="More" type="more" class="more-btn" onclick="moreButtons()">More</button> -->
