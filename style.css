@@ -217,10 +217,9 @@ CORNER NAV
   position: fixed;
   display: grid;
   grid-template-columns: repeat(1, 1);
-  grid-template-rows: repeat(4, 1);
+  grid-template-rows: repeat(3, 1);
   grid-template-areas:
     "modes"
-    "bios"
     "art"
     "photo";
   top: 35px;
@@ -247,10 +246,9 @@ button[type="colorizeReset"] {
 
 /* CORNER NAV GRID */
 .corner-nav-container button {
-  font-size: 1rem;
-  padding: 5px 10px;
+  font-size: 0.8rem;
+  padding: 5px 8px;
 }
-
 button[type="show-artwork"] {
   grid-area: art;
 }
@@ -260,21 +258,50 @@ button[type="colorize1"] {
 button[type="more"] {
   grid-area: more;
 }
-
 button[type="colorizeBIOS"] {
   grid-area: bios;
 }
-
 button[type="show-photos"] {
   grid-area: photo;
 }
-
 button[type="colorizeReset"] {
   grid-area: reset;
 }
 
-#dark-light-mode {
-  grid-area: modes;
+/* Dark/Light Icons Animation */
+#dark-mode-button {
+  fill: var(--color-black);
+  cursor: pointer;
+}
+#dark-mode-button:hover {
+  transition: var(--transition-duration) var(--transition-ease);
+}
+
+#dark-mode-button:hover #sun-rays {
+  animation: sun-rays 750ms var(--transition-ease) alternate infinite;
+  animation-delay: calc(var(--order) * 600ms);
+}
+#dark-mode-button:hover #sun-core {
+  transform: scale(0.5);
+  transition: var(--transition-duration) var(--transition-ease);
+}
+
+@keyframes sun-rays {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sun-rays-rotate {
+  from {
+    transform: rotate();
+  }
+  to {
+    transform: rotate();
+  }
 }
 
 /* SEE MORE EXP & BRANDS */
@@ -933,6 +960,7 @@ WIDE DESKTOP
     display: inherit;
   }
 }
+
 /*
 ================
 ================
