@@ -426,6 +426,18 @@ function showArtwork() {
   photosContainer.style.opacity = "0";
 }
 
+// HIDE ARROW ON SCROLL
+// var prevScrollpos = window.pageYOffset;
+// window.onscroll = function () {
+//   var currentScrollPos = window.pageYOffset;
+//   if (prevScrollpos > currentScrollPos) {
+//     document.getElementById("").style.opacity = "0";
+//   } else {
+//     document.getElementById("").style.opacity = "0";
+//   }
+//   prevScrollpos = currentScrollPos;
+// };
+
 // //SEE MORE BRANDS
 // const overseasBrands = document.querySelector("#overseas-brands");
 // const seeMoreBrandsBtn = document.querySelector(".see-more-brands-btn");
