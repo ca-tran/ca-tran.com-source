@@ -114,27 +114,12 @@ const currentTime = new Date();
 const isNighttime = currentTime.getHours() >= 19 || currentTime.getHours() < 7;
 
 if (isNighttime) {
-  // Create a link element for the dark mode stylesheet
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = "dark-mode.css";
-
-  // Add the link element to the page's head element
-  document.head.appendChild(link);
-} else {
-  // Remove any existing link elements for the dark mode stylesheet
-  const links = document.head.getElementsByTagName("link");
-  for (let i = 0; i < links.length; i++) {
-    const link = links[i];
-    if (link.href.includes("dark-mode.css")) {
-      document.head.removeChild(link);
-    }
-  }
+  toggleTheme(true);
 }
 
 // DARK LIGHT MANUAL MODE V2
-const darkModeBtn = document.querySelector("button[type='dark-mode']");
-const lightModeBtn = document.querySelector("button[type='light-mode']");
+// const darkModeBtn = document.querySelector("button[type='dark-mode']");
+// const lightModeBtn = document.querySelector("button[type='light-mode']");
 // Light mode
 function lightMode2() {
   const links = document.head.getElementsByTagName("link");
@@ -145,9 +130,6 @@ function lightMode2() {
     }
   }
 
-  // Set buttons
-  lightModeBtn.style.display = "none";
-  darkModeBtn.style.dislay = "inherit";
 }
 // Dark mode
 function darkMode2() {
@@ -158,9 +140,20 @@ function darkMode2() {
   // Add the link element to the page's head element
   document.head.appendChild(link);
 
-  // Set buttons
-  darkModeBtn.style.dislay = "none";
-  lightModeBtn.style.display = "inherit";
+}
+
+function toggleTheme(isDarkMode = false){
+    const btnId = document.getElementById("theme-btn");
+    if (document.body.classList.contains("dark-mode") && !isDarkMode) {
+        document.body.classList.remove("dark-mode");
+        btnId.innerHTML = "Dark";
+        lightMode2();
+    } else {
+        document.body.classList.add("dark-mode");
+        btnId.innerHTML = "Light";
+        darkMode2();
+    }
+
 }
 
 //RANDOM ARTWORK

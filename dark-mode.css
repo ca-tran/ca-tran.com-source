@@ -4,14 +4,14 @@
   background-color: var(--color-black-dark);
 }
 
-/* DARK/LIGHT MODE BUTTON */
-button[type="dark-mode"] {
-  display: none;
-}
+/*!* DARK/LIGHT MODE BUTTON *!*/
+/*button[type="dark-mode"] {*/
+/*  display: none;*/
+/*}*/
 
-.mobile-hidden {
-  display: none;
-}
+/*.mobile-hidden {*/
+/*  display: none;*/
+/*}*/
 
 /* LOGOS */
 .splash-logo {
