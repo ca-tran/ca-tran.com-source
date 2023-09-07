@@ -1,8 +1,0 @@
-body {
-  filter: blur(3px);
-}
-
-a:hover {
-  background-color: var(--color-hover-red);
-  color: var(--color-text-white);
-}
