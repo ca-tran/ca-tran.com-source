@@ -42,12 +42,6 @@ SHARED CSS
   --color-black: #1c1c1c;
   --color-black-dark: #0d0d0d;
 
-  --color-darkmode-white: #f2f2f2;
-  --color-darkmode-gray: #d1d1d1;
-  --color-darkmode-dark-gray: #939393;
-  --color-darkmode-black: #1c1c1c;
-  --color-darkmode-black-dark: #0d0d0d;
-
   --color-bg-svg-white: #dddddd;
   --color-bg-svg-black: #1a1a1a;
 
@@ -61,15 +55,22 @@ SHARED CSS
 
   --rem-size-1: 1rem;
 
-  --color-1: #043504;
-  --color-2: #f1c93b;
-  --color-3: #fff0bb;
-  --color-4: #068fff;
-  --color-5: #1e1e08;
+  --color-new-1: #043504;
+  --color-new-2: #f1c93b;
+  --color-new-3: #fff0bb;
+  --color-new-4: #068fff;
+  --color-new-5: #1e1e08;
 
   --color-bios-bg: #eeeeee;
   --color-bios: #0000aa;
   --color-bios-hover: #a90100;
+
+  /* testing dark light mode color variables */
+  --color-1: #f2f2f2;
+  --color-2: #d1d1d1;
+  --color-3: #939393;
+  --color-4: #1c1c1c;
+  --color-5: #0d0d0d;
 }
 
 html {
