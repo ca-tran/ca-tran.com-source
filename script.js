@@ -185,6 +185,7 @@ const images = [
   "images/overlay-images/artwork/War-Horse.gif",
 ];
 
+const overlayImg = document.querySelector(".artwork-img");
 let currentIndex = -1;
 
 function getRandomImage() {
@@ -196,17 +197,18 @@ function getRandomImage() {
   return images[currentIndex];
 }
 
-function setOverlayImage() {
+function updateOverlayImage() {
   const imageUrl = getRandomImage();
-  const overlayImg = document.querySelector(".artwork-img");
   overlayImg.src = imageUrl;
 }
 
-setOverlayImage();
+updateOverlayImage();
 
-window.setInterval(() => {
-  setOverlayImage();
-}, 4000);
+function rotateOverlayImage() {
+  updateOverlayImage();
+}
+
+window.setInterval(rotateOverlayImage, 4000);
 
 // RANDOM PHOTOS
 const photoImages = [
@@ -236,15 +238,20 @@ const photoImages = [
   "images/photos/vietnam/0031_14.jpg",
   "images/photos/vietnam/0034_15A.jpg",
   "images/photos/vietnam/000053_June_Lomo 100.jpg",
-  "images/photos/vietnam/000057_June_Lomo 100.jpg",
-  "images/photos/vietnam/000059_June_Lomo 100.jpg",
   "images/photos/vietnam/000060_June_Lomo 100.jpg",
-  "images/photos/vietnam/000042010009.jpg",
   "images/photos/vietnam/000042010016.jpg",
   "images/photos/vietnam/000042010020.jpg",
   "images/photos/vietnam/000042010025.jpg",
+  "images/photos/singapore/000047850008_Lomo 400 02_2019.jpg",
+  "images/photos/singapore/000047850014_Lomo 400 02_2019.jpg",
+  "images/photos/singapore/000047850018_Lomo 400 02_2019.jpg",
+  "images/photos/singapore/000047850024_Lomo 400 02_2019.jpg",
+  "images/photos/singapore/000048850004_Kodak Color Plus 200_2019.jpg",
+  "images/photos/singapore/000048850007_Kodak Color Plus 200_2019.jpg",
+  "images/photos/vietnam/0033_15.jpg",
 ];
 
+const overlayPhotoImg = document.querySelector(".photos-img");
 let currentPhotoIndex = -1;
 
 function getRandomPhotoImage() {
@@ -256,17 +263,18 @@ function getRandomPhotoImage() {
   return photoImages[currentPhotoIndex];
 }
 
-function setOverlayPhotoImage() {
+function updateOverlayPhotoImage() {
   const photoImageUrl = getRandomPhotoImage();
-  const overlayPhotoImg = document.querySelector(".photos-img");
   overlayPhotoImg.src = photoImageUrl;
 }
 
-setOverlayPhotoImage();
+updateOverlayPhotoImage();
 
-window.setInterval(() => {
-  setOverlayPhotoImage();
-}, 4000);
+function rotateOverlayPhotoImage() {
+  updateOverlayPhotoImage();
+}
+
+window.setInterval(rotateOverlayPhotoImage, 4000);
 
 //AUTO COPYRIGHT CURRENT YEAR, I'M LAZY TO UPDATE MY WEB
 const currentYear = document.getElementById("current-year");
