@@ -2,7 +2,7 @@
 function refreshTime() {
   const timeDisplay = document.getElementById("time");
   const dateString = new Date().toLocaleTimeString("en-US", {
-    timeZone: "Asia/Bangkok",
+    timeZone: "Australia/Perth",
   });
   const formattedString = dateString.replace(", ", " - ");
   const timeArray = formattedString.split(":"); // Split the time string into an array
@@ -86,7 +86,7 @@ window.setInterval(() => {
 //DISPLAY CURRENT WEATHER - OpenWeather
 const apiKey = "9f6562695ed85f8105bf1d55df422373"; // OpenWeatherMap API key
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
-  "Ho Chi Minh"
+  "Perth"
 )}&units=metric&appid=${apiKey}`;
 
 fetch(apiUrl)
