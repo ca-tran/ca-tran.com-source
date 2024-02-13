@@ -106,7 +106,7 @@ h3 {
   font-family: "apercu_monoregular";
   letter-spacing: -1.3px;
 }
-
+/*Hyperlinks*/
 a {
   color: inherit;
   text-decoration: none;
@@ -392,12 +392,11 @@ marquee {
 .scroll-down {
   z-index: 2;
   position: absolute;
+  right: 1.5rem;
   font-size: 1.5rem;
   cursor: none;
-  text-decoration: none;
-  left: 50%;
   bottom: 15px;
-  animation: fade_move_down 3s ease-in-out infinite;
+  animation: fade_move_down 2s ease-in-out infinite;
 }
 
 @keyframes fade_move_down {
