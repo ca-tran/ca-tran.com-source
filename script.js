@@ -435,16 +435,26 @@ function showArtwork() {
 }
 
 // HIDE ARROW ON SCROLL
-// var prevScrollpos = window.pageYOffset;
-// window.onscroll = function () {
-//   var currentScrollPos = window.pageYOffset;
-//   if (prevScrollpos > currentScrollPos) {
-//     document.getElementById("").style.opacity = "0";
-//   } else {
-//     document.getElementById("").style.opacity = "0";
-//   }
-//   prevScrollpos = currentScrollPos;
-// };
+// document.addEventListener("DOMContentLoaded", function() {
+//       var scrollDownElement = document.querySelector(".scroll-down");
+//       var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+//       function handleScroll() {
+//         var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+//         if (currentScrollTop > lastScrollTop) {
+//           // Scrolling down
+//           scrollDownElement.classList.add("hidden");
+//         } else {
+//           // Scrolling up
+//           scrollDownElement.classList.remove("hidden");
+//         }
+
+//         lastScrollTop = currentScrollTop;
+//       }
+
+//       window.addEventListener("scroll", handleScroll);
+//     });
 
 // //SEE MORE BRANDS
 // const overseasBrands = document.querySelector("#overseas-brands");
