@@ -55,16 +55,6 @@ SHARED CSS
 
   --rem-size-1: 1rem;
 
-  --color-new-1: #043504;
-  --color-new-2: #f1c93b;
-  --color-new-3: #fff0bb;
-  --color-new-4: #068fff;
-  --color-new-5: #1e1e08;
-
-  --color-bios-bg: #eeeeee;
-  --color-bios: #0000aa;
-  --color-bios-hover: #a90100;
-
   /* testing dark light mode color variables */
   --color-1: #f2f2f2;
   --color-2: #d1d1d1;
@@ -248,11 +238,6 @@ button[type="more"] {
   display: none;
 }
 
-button[type="less"],
-button[type="colorizeReset"] {
-  display: none;
-}
-
 /* CORNER NAV GRID */
 .corner-nav-container button {
   font-size: 0.8rem;
@@ -261,56 +246,8 @@ button[type="colorizeReset"] {
 button[type="show-artwork"] {
   grid-area: art;
 }
-button[type="colorize1"] {
-  grid-area: c1;
-}
-button[type="more"] {
-  grid-area: more;
-}
-button[type="colorizeBIOS"] {
-  grid-area: bios;
-}
 button[type="show-photos"] {
   grid-area: photo;
-}
-button[type="colorizeReset"] {
-  grid-area: reset;
-}
-
-/* Dark/Light Icons Animation */
-#dark-mode-button {
-  fill: var(--color-black);
-  cursor: pointer;
-}
-#dark-mode-button:hover {
-  transition: var(--transition-duration) var(--transition-ease);
-}
-
-#dark-mode-button:hover #sun-rays {
-  animation: sun-rays 750ms var(--transition-ease) alternate infinite;
-  animation-delay: calc(var(--order) * 600ms);
-}
-#dark-mode-button:hover #sun-core {
-  transform: scale(0.5);
-  transition: var(--transition-duration) var(--transition-ease);
-}
-
-@keyframes sun-rays {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes sun-rays-rotate {
-  from {
-    transform: rotate();
-  }
-  to {
-    transform: rotate();
-  }
 }
 
 /* SEE MORE EXP & BRANDS */
@@ -425,53 +362,6 @@ marquee {
   height: 100vh;
   background-color: var(--color-white);
   z-index: 1;
-}
-
-/*=========== FORMS ===========*/
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-label,
-input,
-textarea {
-  font-family: apercu_monoregular;
-}
-
-label {
-  color: var(--color-black);
-  font-family: "avant-garde";
-  font-size: 1rem;
-}
-
-input,
-textarea {
-  width: 230px;
-  color: var(--color-black);
-  font-family: "avant-garde";
-  font-size: 1rem;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 5px;
-  padding-left: 5px;
-  border-top: 1px solid var(--color-black);
-  border-left: 1px solid var(--color-black);
-  border-right: 1px solid var(--color-black);
-  border-bottom: 1px solid var(--color-black);
-  background: var(--color-white);
-  resize: vertical;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-}
-
-button[type="submit"] {
-  width: 230px;
 }
 
 /*=========== CURRENT WEATHER ===========*/
